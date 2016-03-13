@@ -1,15 +1,19 @@
 import consts.paths as paths
 import consts.xml_tags as tags
 from api_client import APIClient
+from abc import ABCMeta, abstractmethod
 
 # create the client
 class BaseAPI(object):
+    __metaclass__ = ABCMeta
 
     REQ_SUCCESS = "0"
     SERVICE_ERROR = "1"
     INVALID_ZWSID = "2"
     SERVICE_UNAVAILABLE = "3"
     API_UNAVAILABLE = "4"
+ 
+    NO_RESULTS = "504"
 
     def __init__(self, path, params):
         #Specific endpoint
@@ -29,6 +33,8 @@ class BaseAPI(object):
             return "Service Unavailable"
         elif code == self.API_UNAVAILABLE:
             return "API Unavailable"
+        elif code == self.NO_RESULTS:
+            return "No Results"
         else:
             return ""
 
@@ -49,14 +55,17 @@ class BaseAPI(object):
             print_error_msg = error_code + " " + error_description + " " + error_msg
             print "Response from API ! " + print_error_msg
 
+        return error_code
+
     def request(self):
         print "Fetching " + self.path
-        print ""
 
         api = APIClient(self.path, self.params, paths.GET_METHOD)
         result = api.request()
 
         print "Status code = " + str(result.status_code)
+        print ""
+
         if result.status_code != 200:
             print "Error hitting the API " + result.status_code
  

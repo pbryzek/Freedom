@@ -8,6 +8,8 @@ class HomeObj(object):
         self.graphlink = graphlink 
         self.maplink = maplink 
         self.compslink = compslink 
+        self.chartlink = ""
+
         self.zpid = zpid 
         self.zestimate = zestimate 
         self.lastupdated = lastupdated 
@@ -15,6 +17,6 @@ class HomeObj(object):
         self.lastupdated_rent = lastupdated_rent
 
     def create_csv(self):
-        comma_separated = self.address + "," + self.citystatezip + "," + self.homelink + "," + self.graphlink + "," + self.maplink + "," + self.compslink + "," + self.zpid + "," + self.zestimate + "," + self.lastupdated + "," + self.rentestimate + "," + self.lastupdated_rent
+        comma_separated = self.address + "," + self.citystatezip + "," + self.chartlink + "," + self.homelink + "," + self.graphlink + "," + self.maplink + "," + self.compslink + "," + self.zpid + "," + self.zestimate + "," + self.lastupdated + "," + self.rentestimate + "," + self.lastupdated_rent
 
         return comma_separated
