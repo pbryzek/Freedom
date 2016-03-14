@@ -68,8 +68,6 @@ class BaseAPI(object):
         return error_code
 
     def request(self):
-        print "Fetching " + self.path
-
         api = APIClient(self.path, self.params, paths.GET_METHOD)
         result = api.request()
 

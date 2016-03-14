@@ -1,8 +1,27 @@
+import haversine
+
 class CompObj(object):
-    def __init__(self, home):
+    def __init__(self, home, principal_lat, principal_long, comp_score, soldprice, solddate):
         self.home = home
+        self.principal_lat = principal_lat
+        self.principal_long = principal_long
+        self.comp_score = comp_score['score']
+        self.soldprice = soldprice
+        self.solddate = solddate
+
+    def get_distance(self):
+        principal_point = (float(self.principal_lat), float(self.principal_long))
+        comp_point = (float(self.home.latitude), float(self.home.longitude))
+ 
+        miles = haversine.distance(principal_point, comp_point)
+
+        return miles      
 
     def create_csv(self):
-        home_csv = self.home.create_csv()       
- 
+        distance = self.get_distance()
+        self.home.distance = distance
+        home_csv = self.home.create_csv()
 
+        home_csv += "," + str(self.soldprice) + "," + str(self.solddate) + "," + str(self.comp_score)
+
+        return home_csv     

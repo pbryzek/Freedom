@@ -21,8 +21,6 @@ class APIGetCompsRequest(BaseHomeAPI):
     def request(self):
         response = super(APIGetCompsRequest, self).request()
 
-        print response.content
-
         root = ET.fromstring(response.content)
         for child in root:
             tag = child.tag

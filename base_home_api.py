@@ -30,6 +30,9 @@ class BaseHomeAPI(BaseAPI):
         self.lastupdated = ""
         self.rentestimate = ""
         self.lastupdated_rent = ""
+
+        self.soldprice = ""
+        self.solddate = ""
         self.homes = []
 
     def parse_address(self, node):
@@ -89,6 +92,10 @@ class BaseHomeAPI(BaseAPI):
                 self.baths = child.text
             elif tag == tags.TAG_BEDROOMS:
                 self.beds = child.text
+            elif tag == tags.TAG_SOLD_PRICE:
+                self.soldprice = child.text
+            elif tag == tags.TAG_SOLD_DATE:
+                self.solddate = child.text
 
     def parse_results(self, node):
         for child in node:

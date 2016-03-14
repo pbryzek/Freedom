@@ -24,7 +24,10 @@ class HomeObj(object):
         self.rentestimate = rentestimate 
         self.lastupdated_rent = lastupdated_rent
 
+        #Distance from home, used to keep the csv consistent
+        self.distance = 0
+
     def create_csv(self):
-        comma_separated = self.address + "," + self.citystatezip + "," + self.beds + "," + self.baths + "," + self.sqfootage + "," + self.yearbuilt + "," + self.latitude + "," + self.longitude + "," + self.redfin_link + "," + self.chartlink + "," + self.homelink + "," + self.graphlink + "," + self.maplink + "," + self.compslink + "," + self.zpid + "," + self.zestimate + "," + self.lastupdated + "," + self.rentestimate + "," + self.lastupdated_rent
+        comma_separated = self.address + "," + self.citystatezip + "," + self.beds + "," + self.baths + "," + self.sqfootage + "," + self.yearbuilt + "," + self.latitude + "," + self.longitude + "," + self.redfin_link + "," + self.chartlink + "," + self.homelink + "," + self.graphlink + "," + self.maplink + "," + self.compslink + "," + self.zpid + "," + self.zestimate + "," + self.lastupdated + "," + self.rentestimate + "," + self.lastupdated_rent + "," + str(self.distance)
 
         return comma_separated

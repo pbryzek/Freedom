@@ -4,12 +4,15 @@ import consts.paths as paths
 import consts.xml_tags as tags
 import xml.etree.ElementTree as ET
 from objects.obj_home import HomeObj
+from objects.obj_comp import CompObj
+import consts.switches as switches
 
+import time
 
 # create the client
 class APIGetDeepCompsRequest(BaseHomeAPI):
 
-    def __init__(self, zpid, count):
+    def __init__(self, zpid, count, principal_lat, principal_long, principal_sqfootage):
         #Specific endpoint
         path = paths.GET_DEEP_COMPS
 
@@ -18,10 +21,98 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
 
         super(APIGetDeepCompsRequest, self).__init__(path, params)
 
+        self.principal_lat = principal_lat 
+        self.principal_long = principal_long
+        self.principal_sqfootage = principal_sqfootage
+
+    #Called from the parent.
+    def parse_address(self, node):
+        city = ""
+        state = ""
+        zip = ""
+        for child in node:
+            tag = child.tag
+            if tag == tags.TAG_LATITUDE:
+                self.latitude = child.text
+            elif tag == tags.TAG_LONGITUDE:
+                self.longitude = child.text
+            elif tag == tags.TAG_STREET:
+                self.address = child.text
+            elif tag == tags.TAG_CITY:
+                city = child.text
+            elif tag == tags.TAG_STATE:
+                state = child.text
+            elif tag == tags.TAG_ZIP:
+                zip = child.text
+
+        self.citystatezip = city + ", " + state + " " + zip
+
+    def parse_comp(self, node):
+        comp_score = node.attrib
+        #Leverage the parent's parsing mechanism
+        self.parse_result(node)
+
+        home = HomeObj(self.address, self.citystatezip, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
+
+        comp = CompObj(home, self.principal_lat, self.principal_long, comp_score, self.soldprice, self.solddate)
+        miles = comp.get_distance()
+        sqfootage = int(home.sqfootage)
+
+        #Do rules to see if these are valid comps
+        if miles > switches.MAX_DISTANCE_FROM_PRINCIPAL:
+            print "Comp property is " + str(miles) + " away from the principal and max allowed miles = " + str(switches.MAX_DISTANCE_FROM_PRINCIPAL) + " skipping"
+            return
+
+        min_sqfootage = int(self.principal_sqfootage) * (1-switches.SQ_FOOTAGE_PERCENTAGE) 
+        max_sqfootage = int(self.principal_sqfootage) * (1+switches.SQ_FOOTAGE_PERCENTAGE)
+        if (sqfootage < min_sqfootage) or (sqfootage > max_sqfootage):
+            print "Comp property sq footage is " + str(sqfootage) + " which is outside the allowed range of min: " + str(min_sqfootage) + " max: " + str(max_sqfootage) + " skipping"
+            return              
+
+        solddate_time = time.strptime(self.solddate, "%m/%d/%Y") 
+
+        now_str = time.strftime("%m/%d/%Y")       
+        now_time = time.strptime(now_str, "%m/%d/%Y")
+
+        #Num seconds different
+        time_diff_s = (time.mktime(now_time) - time.mktime(solddate_time)) / 60 
+        time_diff_m = time_diff_s / 60
+        time_diff_h = time_diff_s / 60
+        time_diff_d = time_diff_h / 24
+        time_diff_mon = time_diff_d / 30
+
+        if switches.SOLD_PRICE_INTERVAL < time_diff_mon:
+            print "Sold date: " + str(self.solddate) + " is " + str(time_diff_mon) + " months diff which is > than the max of " + str(switches.SOLD_PRICE_INTERVAL) + " skipping"
+            return
+
+        self.homes.append(comp)
+
+    def parse_comparables(self, node):
+        num_comps = 0
+        for child in node:
+            tag = child.tag
+            if tag == tags.TAG_COMP:
+                num_comps += 1
+                self.parse_comp(child)
+
+        print "Found a total of " + str(num_comps) + " total comps"
+
+    def parse_properties(self, node):
+        for child in node:
+            tag = child.tag
+            if tag == tags.TAG_PRINCIPAL:
+                pass
+            elif tag == tags.TAG_COMPARABLES:
+                self.parse_comparables(child)
+
+    def parse_response(self, node):
+        for child in node:
+            tag = child.tag
+            if tag == tags.TAG_PROPERTIES:
+                self.parse_properties(child)
+
     def request(self):
         response = super(APIGetDeepCompsRequest, self).request()
-
-        print response.content
 
         root = ET.fromstring(response.content)
         for child in root:

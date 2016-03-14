@@ -30,8 +30,8 @@ class APIClient(object):
 
         full_url = self.base_url + self.path
 
-        print full_url
-        print self.params
+        print "Fetching " + full_url
+        #print self.params
 
         # send a request to the api server
         result = requests.request(

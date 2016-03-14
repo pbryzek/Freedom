@@ -5,7 +5,7 @@ MAX_PROPERTIES_TO_EVALUATE = 1
 #MAX_PROPERTIES_TO_EVALUATE = -1
 
 #Num comps we are requesting from the Zillow API, 25 is the max
-NUM_COMPS_REQUESTED = 2
+NUM_COMPS_REQUESTED = 25
 
 #Should we get the Zestimate?
 RENTZESTIMATE = True
@@ -25,3 +25,27 @@ MIN_PRICE = 50000
 #The min number of Days on Market we are interested in    
 MIN_DOM = 20
 
+#The max +- sq footage that the comparable property needs to be within the principal property
+SQ_FOOTAGE_PERCENTAGE = .20
+
+#The max distance that the comparable property needs to be within the principal property in miles
+MAX_DISTANCE_FROM_PRINCIPAL = 1.5
+
+#The commissions we will make per price point
+COMMISSION_POINT_1 = 10000
+COMMISSION_POINT_2 = 15000
+COMMISSION_POINT_3 = 30000
+
+PRICE_POINT_1 = 300000
+PRICE_POINT_2 = 1000000
+
+#The Repairs based on amount sq footage
+LIGHT_REHAB = 35
+MEDIUM_REHAB = 45
+HIGH_REHAB = 60
+
+#The percent of the ARV that we will use for the MAO
+ARV_PERCENTAGE = .7
+
+#Valid number of months for Comp Sold Date in months
+SOLD_PRICE_INTERVAL = 6
