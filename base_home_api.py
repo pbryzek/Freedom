@@ -14,6 +14,13 @@ class BaseHomeAPI(BaseAPI):
 
         self.address = ""
         self.citystatezip = ""
+        self.latitude = ""
+        self.longitude = ""
+        self.yearbuilt = ""
+        self.beds = "" 
+        self.baths = "" 
+        self.sqfootage = "" 
+
         self.homelink = ""
         self.graphlink = ""
         self.maplink = ""
@@ -25,9 +32,13 @@ class BaseHomeAPI(BaseAPI):
         self.lastupdated_rent = ""
         self.homes = []
 
-    @abstractmethod
     def parse_address(self, node):
-        raise NotImplementedError("Must override parse_address")
+        for child in node:
+            tag = child.tag
+            if tag == tags.TAG_LATITUDE:
+                self.latitude = child.text
+            elif tag == tags.TAG_LONGITUDE:
+                self.longitude = child.text
 
     def parse_links(self, node):
         for child in node:
@@ -57,7 +68,6 @@ class BaseHomeAPI(BaseAPI):
             elif tag == tags.TAG_LASTUPDATED:
                 self.lastupdated = child.text
 
-
     def parse_result(self, node):
         for child in node:
             tag = child.tag
@@ -71,13 +81,22 @@ class BaseHomeAPI(BaseAPI):
                 self.parse_rentestimate(child)
             elif tag == tags.TAG_ADDRESS:
                 self.parse_address(child)
+            elif tag == tags.TAG_YEARBUILT:
+                self.yearbuilt = child.text
+            elif tag == tags.TAG_SQ_FOOTAGE:
+                self.sqfootage = child.text
+            elif tag == tags.TAG_BATHROOMS:
+                self.baths = child.text
+            elif tag == tags.TAG_BEDROOMS:
+                self.beds = child.text
 
     def parse_results(self, node):
         for child in node:
             tag = child.tag
             if tag == tags.TAG_RESULT:
                 self.parse_result(child)
-                home = HomeObj(self.address, self.citystatezip, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
+
+                home = HomeObj(self.address, self.citystatezip, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
                 self.homes.append(home)
 
         if len(self.homes) > 1:
@@ -88,4 +107,3 @@ class BaseHomeAPI(BaseAPI):
             tag = child.tag
             if tag == tags.TAG_RESULTS:
                 self.parse_results(child)    
-

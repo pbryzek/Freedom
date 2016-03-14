@@ -13,6 +13,10 @@ class BaseAPI(object):
     SERVICE_UNAVAILABLE = "3"
     API_UNAVAILABLE = "4"
  
+    INVALID_ZPID = "500"
+    INVALID_COUNT = "501"
+    ZPID_NOT_FOUND = "502"
+    ZESTIMATE_NOT_FOUND = "503"
     NO_RESULTS = "504"
 
     def __init__(self, path, params):
@@ -35,6 +39,12 @@ class BaseAPI(object):
             return "API Unavailable"
         elif code == self.NO_RESULTS:
             return "No Results"
+        elif code == self.INVALID_ZPID:
+            return "Zpid was not specified or invalid"
+        elif code == self.INVALID_COUNT:
+            return "Count param not specified or invalid"
+        elif code == self.ZESTIMATE_NOT_FOUND:
+            return "Property does not have a Zestimate"
         else:
             return ""
 
@@ -64,7 +74,6 @@ class BaseAPI(object):
         result = api.request()
 
         print "Status code = " + str(result.status_code)
-        print ""
 
         if result.status_code != 200:
             print "Error hitting the API " + result.status_code

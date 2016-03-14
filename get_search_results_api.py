@@ -21,10 +21,6 @@ class APIGetSearchResultsRequest(BaseHomeAPI):
         self.address = address
         self.citystatezip = citystatezip
 
-    #Implementing abstract method but not needed here
-    def parse_address(self, node):
-        pass
-
     def request(self):
         response = super(APIGetSearchResultsRequest, self).request()
 
