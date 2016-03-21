@@ -12,14 +12,14 @@ import time
 # create the client
 class APIGetDeepCompsRequest(BaseHomeAPI):
 
-    def __init__(self, zpid, count, principal_lat, principal_long, principal_sqfootage):
+    def __init__(self, type, zpid, count, principal_lat, principal_long, principal_sqfootage):
         #Specific endpoint
         path = paths.GET_DEEP_COMPS
 
         #Params to send with request
         params = {"zpid": zpid, "count": count}
 
-        super(APIGetDeepCompsRequest, self).__init__(path, params)
+        super(APIGetDeepCompsRequest, self).__init__(type, path, params)
 
         self.principal_lat = principal_lat 
         self.principal_long = principal_long
@@ -52,7 +52,7 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
         #Leverage the parent's parsing mechanism
         self.parse_result(node)
 
-        home = HomeObj(self.address, self.citystatezip, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
+        home = HomeObj(self.type, self.address, self.citystatezip, "", "", self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
 
         comp = CompObj(home, self.principal_lat, self.principal_long, comp_score, self.soldprice, self.solddate)
         miles = comp.get_distance()
@@ -63,27 +63,29 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
             print "Comp property is " + str(miles) + " away from the principal and max allowed miles = " + str(switches.MAX_DISTANCE_FROM_PRINCIPAL) + " skipping"
             return
 
-        min_sqfootage = int(self.principal_sqfootage) * (1-switches.SQ_FOOTAGE_PERCENTAGE) 
-        max_sqfootage = int(self.principal_sqfootage) * (1+switches.SQ_FOOTAGE_PERCENTAGE)
-        if (sqfootage < min_sqfootage) or (sqfootage > max_sqfootage):
-            print "Comp property sq footage is " + str(sqfootage) + " which is outside the allowed range of min: " + str(min_sqfootage) + " max: " + str(max_sqfootage) + " skipping"
-            return              
+        if self.principal_sqfootage.strip() != '':
+            min_sqfootage = int(self.principal_sqfootage) * (1-switches.SQ_FOOTAGE_PERCENTAGE) 
+            max_sqfootage = int(self.principal_sqfootage) * (1+switches.SQ_FOOTAGE_PERCENTAGE)
+            if (sqfootage < min_sqfootage) or (sqfootage > max_sqfootage):
+                print "Comp property sq footage is " + str(sqfootage) + " which is outside the allowed range of min: " + str(min_sqfootage) + " max: " + str(max_sqfootage) + " skipping"
+                return              
 
-        solddate_time = time.strptime(self.solddate, "%m/%d/%Y") 
+        if self.solddate.strip() != '':
+            solddate_time = time.strptime(self.solddate, "%m/%d/%Y") 
 
-        now_str = time.strftime("%m/%d/%Y")       
-        now_time = time.strptime(now_str, "%m/%d/%Y")
+            now_str = time.strftime("%m/%d/%Y")       
+            now_time = time.strptime(now_str, "%m/%d/%Y")
 
-        #Num seconds different
-        time_diff_s = (time.mktime(now_time) - time.mktime(solddate_time)) / 60 
-        time_diff_m = time_diff_s / 60
-        time_diff_h = time_diff_s / 60
-        time_diff_d = time_diff_h / 24
-        time_diff_mon = time_diff_d / 30
+            #Num seconds different
+            time_diff_s = (time.mktime(now_time) - time.mktime(solddate_time)) / 60 
+            time_diff_m = time_diff_s / 60
+            time_diff_h = time_diff_s / 60
+            time_diff_d = time_diff_h / 24
+            time_diff_mon = time_diff_d / 30
 
-        if switches.SOLD_PRICE_INTERVAL < time_diff_mon:
-            print "Sold date: " + str(self.solddate) + " is " + str(time_diff_mon) + " months diff which is > than the max of " + str(switches.SOLD_PRICE_INTERVAL) + " skipping"
-            return
+            if switches.SOLD_PRICE_INTERVAL < time_diff_mon:
+                print "Sold date: " + str(self.solddate) + " is " + str(time_diff_mon) + " months diff which is > than the max of " + str(switches.SOLD_PRICE_INTERVAL) + " skipping"
+                return
 
         self.homes.append(comp)
 

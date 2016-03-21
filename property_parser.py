@@ -4,19 +4,31 @@ import consts.paths as paths
 import consts.switches as switches
 
 class PropertyParser(object):
-    properties_csv = paths.INPUTS_PATH + paths.PROPERTIES_CSV
 
-    address_index = 2
-    city_index = 3
-    state_index = 4
-    zip_index = 5
-    price_index = 6
-    dom_index = 15
-    redfin_link_index = 24
-    shortsale_index = 32
+    address_index = -1
+    city_index = -1
+    state_index = -1
+    zip_index = -1
+    price_index = -1
+    dom_index = -1
+    redfin_link_index = -1
+    listing_id_index = -1
+    shortsale_index = -1
 
-    def __init__(self):
+    def __init__(self, type):
         self.addresses = []
+        self.type = type
+        if type == switches.PROPERTY_TYPE_REDFIN:
+            self.properties_csv = paths.INPUTS_PATH + paths.REDFIN_PROPERTIES_CSV
+            self.address_index = 2
+            self.city_index = 3
+            self.state_index = 4
+            self.zip_index = 5
+            self.price_index = 6
+            self.dom_index = 15
+            self.redfin_link_index = 24
+            self.listing_id_index = 26
+            self.shortsale_index = 32
 
     def parse(self):
         with open(self.properties_csv, "r") as csvfile:
@@ -59,10 +71,7 @@ class PropertyParser(object):
                     num_shortsales_skipped += 1
                     continue
 
-                if price > switches.MAX_PRICE:
-                    price_skipped_props += 1
-                    continue
-                elif price < switches.MIN_PRICE:
+                if price < switches.MIN_PRICE:
                     low_price_skipped_props += 1
                     continue
 
@@ -75,10 +84,10 @@ class PropertyParser(object):
                 state = cols[self.state_index]
                 zip = cols[self.zip_index]
 
-                dom = cols[self.dom_index]
                 redfin_link = cols[self.redfin_link_index]
+                listing_id = cols[self.listing_id_index]
 
-                address_obj = AddressObj(address, city, state, zip, redfin_link)
+                address_obj = AddressObj(address, city, state, zip, redfin_link, dom_str, listing_id)
                 self.addresses.append(address_obj)
  
                 num_properties_analyzed += 1
@@ -98,8 +107,9 @@ class PropertyParser(object):
             address = address_obj.address
             citystatezip = address_obj.citystatezip
             redfin_link = address_obj.redfin_link
-
-            api_engine = APIEngine(address, citystatezip, redfin_link)
+            dom = address_obj.dom
+            listing_id = address_obj.listing_id
+            api_engine = APIEngine(address, citystatezip, redfin_link, dom, listing_id, self.type)
             api_engine.make_requests()
 
     def print_properties(self):

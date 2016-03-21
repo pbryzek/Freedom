@@ -8,18 +8,20 @@ from objects.obj_home import HomeObj
 
 # create the client
 class APIGetDeepSearchResultsRequest(BaseHomeAPI):
-    def __init__(self, address, citystatezip, rentzestimate=False):
+    def __init__(self, type, address, citystatezip, dom, listing_id, rentzestimate=False):
         #Specific endpoint
         path = paths.GET_DEEP_SEARCH_RESULTS
 
         #Params to send with request
         params = {"address": address, "citystatezip": citystatezip, "rentzestimate":rentzestimate}
 
-        super(APIGetDeepSearchResultsRequest, self).__init__(path, params)
+        super(APIGetDeepSearchResultsRequest, self).__init__(type, path, params)
 
         #To build the home object
         self.address = address
         self.citystatezip = citystatezip
+        self.dom = dom
+        self.listing_id = listing_id
 
     def request(self):
         response = super(APIGetDeepSearchResultsRequest, self).request()

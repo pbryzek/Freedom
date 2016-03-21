@@ -9,46 +9,58 @@ import consts.switches as switches
 import time
 
 class APIEngine(object):
+
     newline = "\n"
-    ts = int(time.time())
-    csv_path = paths.RESULTS_PATH + str(ts) + "_" + paths.RESULTS_CSV
+    csv_path = ""
     
-    def __init__(self, address, citystatezip, redfin_link):
+    def __init__(self, address, citystatezip, redfin_link, dom, listing_id, type):
         self.address = address
         self.citystatezip = citystatezip       
-        self.redfin_link = redfin_link 
+        self.redfin_link = redfin_link
+        self.dom = dom 
+        self.listing_id = listing_id
+        self.type = type
+        ts = int(time.time())
+        if type == switches.PROPERTY_TYPE_REDFIN:
+            self.csv_path = paths.RESULTS_PATH + paths.REDFIN_RESULTS_PATH + "_" + str(ts) + paths.CSV_ENDING
 
     def create_csv(self, home, comps):
-        with open(self.csv_path, "a") as csvfile:        
-            title_comma_separate = "address, citystatezip, beds, baths, sqfootage, yearbuilt, latitude, longitude, redfin link, chartlink, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, distance, sold price, sold date, comp score"
-            csvfile.write(title_comma_separate)
-            csvfile.write(self.newline)
+        with open(self.csv_path, "a") as csvfile: 
+            main_csv_string = ""
+       
+            title_comma_separate = "prop type, address, citystatezip, dom, listing_id, beds, baths, sqfootage, yearbuilt, latitude, longitude, redfin link, chartlink, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, distance, sold price, sold date, comp score, $/sqft"
 
+            main_csv_string += title_comma_separate
+            main_csv_string += self.newline
+            
             comma_separated = home.create_csv()
-            csvfile.write(comma_separated)
-            csvfile.write(self.newline)
+            main_csv_string += comma_separated
+            main_csv_string += self.newline
 
             print "Evaluating " + str(len(comps)) + " valid comps"
             principal_arv = 0
-            comps_aggregate_value = 0
+            sqft_aggregate_value = 0
+            
             for comp in comps:
                 comp_comma_separated = comp.create_csv()
-                csvfile.write(comp_comma_separated)
-                csvfile.write(self.newline)
+                main_csv_string += comp_comma_separated
+                main_csv_string += self.newline
 
-                comp_value = int(comp.soldprice)
-                comp_date = comp.solddate
-                comps_aggregate_value += comp_value
+                sqft_value = int(comp.sqftprice)
+                sqft_aggregate_value += sqft_value
 
             num_comps = len(comps)
             if num_comps == 0:
-                csvfile.write(self.newline)
                 return
 
-            #The question is we have the sold price, but we don't know if the sold prices were with what level of repair
-            principal_arv = comps_aggregate_value / num_comps
+            #Get the average price/sqft for comps sold
+            avg_sqft_price = sqft_aggregate_value / num_comps
 
-            principal_sqfootage = int(home.sqfootage)
+            principal_arv = 0
+            principal_sqfootage = 0
+            if home.sqfootage.strip() != '':
+                principal_sqfootage = int(home.sqfootage)
+                principal_arv = avg_sqft_price * principal_sqfootage
             repair_light = (principal_sqfootage * switches.LIGHT_REHAB)
             repair_med = (principal_sqfootage * switches.MEDIUM_REHAB)
             repair_high = (principal_sqfootage * switches.HIGH_REHAB)
@@ -66,8 +78,15 @@ class APIEngine(object):
             mao_med = arv - repair_med - commision
             mao_high = arv - repair_high - commision
 
-            mao_header = "principal_arv,mao_light,mao_med,mao_high" 
-            mao_comma_separated = str(principal_arv) + "," + str(mao_light) + "," + str(mao_med) + "," + str(mao_high)
+            #If the mao_med is greater than our max price, skip this home
+            if switches.MAX_PRICE < mao_med:
+                return
+
+            #Finally write out the string
+            csvfile.write(main_csv_string)
+
+            mao_header = "principal_arv,avg $/sqft, mao_light,mao_med,mao_high" 
+            mao_comma_separated = str(principal_arv) + "," + str(avg_sqft_price) + "," + str(mao_light) + "," + str(mao_med) + "," + str(mao_high)
             csvfile.write(mao_header)
             csvfile.write(self.newline)
             csvfile.write(mao_comma_separated)
@@ -80,13 +99,13 @@ class APIEngine(object):
         print "Getting info for property: " + self.address + " " + self.citystatezip
         #First get the zpid of the home in question
 
-        ##get_search_api = APIGetSearchResultsRequest(self.address, self.citystatezip, switches.RENTZESTIMATE)
+        ##get_search_api = APIGetSearchResultsRequest(self.type, self.address, self.citystatezip, switches.RENTZESTIMATE)
         ##homes = get_search_api.request()
         ##if len(homes) == 0:
         ##    print "Get Search Results API did not return any results!"
         ##    return
 
-        get_deep_search_api = APIGetDeepSearchResultsRequest(self.address, self.citystatezip, switches.RENTZESTIMATE)
+        get_deep_search_api = APIGetDeepSearchResultsRequest(self.type, self.address, self.citystatezip, self.dom, self.listing_id, switches.RENTZESTIMATE)
         homes = get_deep_search_api.request()
         if len(homes) == 0:
             print "Get Deep Search Results API did not return any results!"
@@ -100,7 +119,7 @@ class APIEngine(object):
         zpid = home.zpid
 
         #Get the deep comps for that home
-        deep_comps_api = APIGetDeepCompsRequest(zpid, switches.NUM_COMPS_REQUESTED, home.latitude, home.longitude, home.sqfootage)
+        deep_comps_api = APIGetDeepCompsRequest(self.type, zpid, switches.NUM_COMPS_REQUESTED, home.latitude, home.longitude, home.sqfootage)
         deep_comps = deep_comps_api.request()
 
         #self.create_csv(home, deep_comps)
@@ -111,7 +130,7 @@ class APIEngine(object):
 
         #Get the comps for that home
         comps = []
-        #comps_api = APIGetCompsRequest(zpid, switches.NUM_COMPS_REQUESTED)
+        #comps_api = APIGetCompsRequest(self.type, zpid, switches.NUM_COMPS_REQUESTED)
         #comps = comps_api.request()
 
         #if len(comps) < switches.MIN_NUM_COMPS:
@@ -123,8 +142,8 @@ class APIEngine(object):
             return 
 
         #Get the chart api
-        chart_api = APIGetChartRequest(zpid)
-        home.chartlink = chart_api.request()
+        #chart_api = APIGetChartRequest(zpid)
+        #home.chartlink = chart_api.request()
 
         #Finally put the results in a csv 
         self.create_csv(home, deep_comps)

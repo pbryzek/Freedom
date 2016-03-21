@@ -8,6 +8,7 @@ class CompObj(object):
         self.comp_score = comp_score['score']
         self.soldprice = soldprice
         self.solddate = solddate
+        self.sqftprice = int(soldprice) / int(home.sqfootage) 
 
     def get_distance(self):
         principal_point = (float(self.principal_lat), float(self.principal_long))
@@ -22,6 +23,6 @@ class CompObj(object):
         self.home.distance = distance
         home_csv = self.home.create_csv()
 
-        home_csv += "," + str(self.soldprice) + "," + str(self.solddate) + "," + str(self.comp_score)
+        home_csv += "," + str(self.soldprice) + "," + str(self.solddate) + "," + str(self.comp_score) + "," + str(self.sqftprice)
 
         return home_csv     

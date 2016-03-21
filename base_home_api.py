@@ -9,8 +9,11 @@ from abc import ABCMeta, abstractmethod
 class BaseHomeAPI(BaseAPI):
     __metaclass__ = ABCMeta
 
-    def __init__(self, path, params):
+    def __init__(self, type, path, params):
         super(BaseHomeAPI, self).__init__(path, params)
+
+        #What type of property is this, e.g. redfin, agent, foreclosure etc.
+        self.type = type
 
         self.address = ""
         self.citystatezip = ""
@@ -33,6 +36,8 @@ class BaseHomeAPI(BaseAPI):
 
         self.soldprice = ""
         self.solddate = ""
+        self.dom = ""
+        self.listing_id = ""
         self.homes = []
 
     def parse_address(self, node):
@@ -103,7 +108,7 @@ class BaseHomeAPI(BaseAPI):
             if tag == tags.TAG_RESULT:
                 self.parse_result(child)
 
-                home = HomeObj(self.address, self.citystatezip, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
+                home = HomeObj(self.type, self.address, self.citystatezip, self.dom, self.listing_id, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
                 self.homes.append(home)
 
         if len(self.homes) > 1:

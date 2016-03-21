@@ -1,9 +1,11 @@
 #Local Paths
 RESULTS_PATH = "./results/"
-RESULTS_CSV = "homes.csv"
+REDFIN_RESULTS_PATH = "redfin/homes"
 
 INPUTS_PATH = "./inputs/"
-PROPERTIES_CSV = "properties.csv"
+REDFIN_PROPERTIES_CSV = "redfin/properties.csv"
+
+CSV_ENDING = ".csv"
 
 #Zillow API Paths
 BASE_URL = "http://www.zillow.com/webservice/"

@@ -9,14 +9,14 @@ from objects.obj_home import HomeObj
 # create the client
 class APIGetCompsRequest(BaseHomeAPI):
 
-    def __init__(self, zpid, count):
+    def __init__(self, type, zpid, count, dom):
         #Specific endpoint
         path = paths.GET_COMPS
 
         #Params to send with request
         params = {"zpid": zpid, "count": count}
 
-        super(APIGetCompsRequest, self).__init__(path, params)
+        super(APIGetCompsRequest, self).__init__(type, path, params)
 
     def request(self):
         response = super(APIGetCompsRequest, self).request()
