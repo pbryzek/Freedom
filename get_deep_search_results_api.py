@@ -8,7 +8,7 @@ from objects.obj_home import HomeObj
 
 # create the client
 class APIGetDeepSearchResultsRequest(BaseHomeAPI):
-    def __init__(self, type, address, citystatezip, dom, listing_id, rentzestimate=False):
+    def __init__(self, type, address, citystatezip, dom, listing_id, num_hot_words, rentzestimate=False):
         #Specific endpoint
         path = paths.GET_DEEP_SEARCH_RESULTS
 
@@ -22,6 +22,7 @@ class APIGetDeepSearchResultsRequest(BaseHomeAPI):
         self.citystatezip = citystatezip
         self.dom = dom
         self.listing_id = listing_id
+        self.num_hot_words = num_hot_words
 
     def request(self):
         response = super(APIGetDeepSearchResultsRequest, self).request()

@@ -3,6 +3,7 @@ import consts.paths as paths
 import consts.xml_tags as tags
 import xml.etree.ElementTree as ET
 from objects.obj_home import HomeObj
+import common.globals as globals
 
 from abc import ABCMeta, abstractmethod
 
@@ -15,6 +16,7 @@ class BaseHomeAPI(BaseAPI):
         #What type of property is this, e.g. redfin, agent, foreclosure etc.
         self.type = type
 
+        self.num_hot_words = 0
         self.address = ""
         self.citystatezip = ""
         self.latitude = ""
@@ -108,11 +110,11 @@ class BaseHomeAPI(BaseAPI):
             if tag == tags.TAG_RESULT:
                 self.parse_result(child)
 
-                home = HomeObj(self.type, self.address, self.citystatezip, self.dom, self.listing_id, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
+                home = HomeObj(self.type, self.address, self.citystatezip, self.dom, self.listing_id, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent, self.num_hot_words)
                 self.homes.append(home)
 
         if len(self.homes) > 1:
-            print "get_search_results parse_results num_results > 1!!!"
+            globals.handle_err_msg("get_search_results parse_results num_results > 1!!!")
 
     def parse_response(self, node):
         for child in node:

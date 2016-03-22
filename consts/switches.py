@@ -1,5 +1,11 @@
 #This is the controls for parameters for the criteria we are filtering properties on
 
+#When handling err msgs, should those be printed to the screen?
+PRINT_ERR_MSG_TO_SCREEN = True
+
+#When handling err msgs, should those be stored in the file system?
+WRITE_ERR_MSG_TO_FS = True
+
 #Types of properties that are set based on what type of input used (e.g. redfin spreadsheet = MLS)
 PROPERTY_TYPE_REDFIN = "redfin"
 PROPERTY_TYPE_RE_AGENT = "agent"
@@ -10,7 +16,7 @@ PROPERTY_TYPE_ALL = "all"
 REDFIN_ENABLED = True
 
 #Max number of properties we are allowing the script to evaluate
-MAX_PROPERTIES_TO_EVALUATE = 1
+MAX_PROPERTIES_TO_EVALUATE = 5
 #MAX_PROPERTIES_TO_EVALUATE = -1
 
 #Num comps we are requesting from the Zillow API, 25 is the max

@@ -1,4 +1,9 @@
 #Local Paths
+ERR_MSG_PATH_DIR = "results/err/"
+ERR_FILE_NAME = "errors"
+ERR_FILE_EXTENSION = ".txt"
+ERR_MSG_PATH = ERR_MSG_PATH_DIR + ERR_FILE_NAME + ERR_FILE_EXTENSION
+
 RESULTS_PATH = "./results/"
 REDFIN_RESULTS_PATH = "redfin/homes"
 

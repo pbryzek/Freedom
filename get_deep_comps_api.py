@@ -5,7 +5,9 @@ import consts.xml_tags as tags
 import xml.etree.ElementTree as ET
 from objects.obj_home import HomeObj
 from objects.obj_comp import CompObj
+
 import consts.switches as switches
+from common.globals import handle_err_msg
 
 import time
 
@@ -52,7 +54,7 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
         #Leverage the parent's parsing mechanism
         self.parse_result(node)
 
-        home = HomeObj(self.type, self.address, self.citystatezip, "", "", self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent)
+        home = HomeObj(self.type, self.address, self.citystatezip, "", "", self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent, 0)
 
         comp = CompObj(home, self.principal_lat, self.principal_long, comp_score, self.soldprice, self.solddate)
         miles = comp.get_distance()
@@ -60,14 +62,14 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
 
         #Do rules to see if these are valid comps
         if miles > switches.MAX_DISTANCE_FROM_PRINCIPAL:
-            print "Comp property is " + str(miles) + " away from the principal and max allowed miles = " + str(switches.MAX_DISTANCE_FROM_PRINCIPAL) + " skipping"
+            handle_err_msg("Comp property is " + str(miles) + " away from the principal and max allowed miles = " + str(switches.MAX_DISTANCE_FROM_PRINCIPAL) + " skipping")
             return
 
         if self.principal_sqfootage.strip() != '':
             min_sqfootage = int(self.principal_sqfootage) * (1-switches.SQ_FOOTAGE_PERCENTAGE) 
             max_sqfootage = int(self.principal_sqfootage) * (1+switches.SQ_FOOTAGE_PERCENTAGE)
             if (sqfootage < min_sqfootage) or (sqfootage > max_sqfootage):
-                print "Comp property sq footage is " + str(sqfootage) + " which is outside the allowed range of min: " + str(min_sqfootage) + " max: " + str(max_sqfootage) + " skipping"
+                handle_err_msg("Comp property sq footage is " + str(sqfootage) + " which is outside the allowed range of min: " + str(min_sqfootage) + " max: " + str(max_sqfootage) + " skipping")
                 return              
 
         if self.solddate.strip() != '':
@@ -84,7 +86,7 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
             time_diff_mon = time_diff_d / 30
 
             if switches.SOLD_PRICE_INTERVAL < time_diff_mon:
-                print "Sold date: " + str(self.solddate) + " is " + str(time_diff_mon) + " months diff which is > than the max of " + str(switches.SOLD_PRICE_INTERVAL) + " skipping"
+                handle_err_msg("Sold date: " + str(self.solddate) + " is " + str(time_diff_mon) + " months diff which is > than the max of " + str(switches.SOLD_PRICE_INTERVAL) + " skipping")
                 return
 
         self.homes.append(comp)
@@ -97,7 +99,7 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
                 num_comps += 1
                 self.parse_comp(child)
 
-        print "Found a total of " + str(num_comps) + " total comps"
+        handle_err_msg("Found a total of " + str(num_comps) + " total comps")
 
     def parse_properties(self, node):
         for child in node:

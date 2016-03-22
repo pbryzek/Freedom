@@ -2,6 +2,9 @@ from api_engine import APIEngine
 from objects.obj_address import AddressObj
 import consts.paths as paths
 import consts.switches as switches
+import time
+
+from common.globals import handle_err_msg
 
 class PropertyParser(object):
 
@@ -35,9 +38,10 @@ class PropertyParser(object):
             lines = csvfile.readlines()
             first = True
             num_properties = len(lines) - 1
-            print "Number of properties evaluating = " + str(num_properties)
+            
+            handle_err_msg("Number of properties evaluating = " + str(num_properties))
             if switches.MAX_PROPERTIES_TO_EVALUATE != -1:
-                print "Script only allowing the evaluation of " + str(switches.MAX_PROPERTIES_TO_EVALUATE) + " properties"           
+                handle_err_msg("Script only allowing the evaluation of " + str(switches.MAX_PROPERTIES_TO_EVALUATE) + " properties") 
 
             num_shortsales_skipped = 0
             price_skipped_props = 0
@@ -87,34 +91,38 @@ class PropertyParser(object):
                 redfin_link = cols[self.redfin_link_index]
                 listing_id = cols[self.listing_id_index]
 
-                address_obj = AddressObj(address, city, state, zip, redfin_link, dom_str, listing_id)
+                description = "Cheap Home that sells FAST! Handy man special!"
+
+                address_obj = AddressObj(address, city, state, zip, redfin_link, dom_str, listing_id, description)
                 self.addresses.append(address_obj)
  
                 num_properties_analyzed += 1
 
         total_props = num_properties - price_skipped_props - low_price_skipped_props - num_shortsales_skipped - num_dom_skipped
 
-        print "Number of properties skipped due to address Undisclosed = " + str(num_undisclosed) 
-        print "Number of properties skipped due to shortsale = " + str(num_shortsales_skipped)
-        print "Number of properties skipped due to price too high = " + str(price_skipped_props)
-        print "Number of properties skipped due to price too low = " + str(low_price_skipped_props)
-        print "Number of properties skipped due to DOM too low = " + str(num_dom_skipped)
-        print "Total Number of properties evaluated = " + str(num_properties_analyzed)
-        print ""
+        handle_err_msg("Number of properties skipped due to address Undisclosed = " + str(num_undisclosed)) 
+        handle_err_msg("Number of properties skipped due to shortsale = " + str(num_shortsales_skipped))
+        handle_err_msg("Number of properties skipped due to price too high = " + str(price_skipped_props))
+        handle_err_msg("Number of properties skipped due to price too low = " + str(low_price_skipped_props))
+        handle_err_msg("Number of properties skipped due to DOM too low = " + str(num_dom_skipped))
+        handle_err_msg("Total Number of properties evaluated = " + str(num_properties_analyzed))
+        handle_err_msg("")
 
     def make_requests(self):
+        ts = int(time.time())
         for address_obj in self.addresses:
             address = address_obj.address
             citystatezip = address_obj.citystatezip
             redfin_link = address_obj.redfin_link
             dom = address_obj.dom
             listing_id = address_obj.listing_id
-            api_engine = APIEngine(address, citystatezip, redfin_link, dom, listing_id, self.type)
+            num_hot_words = address_obj.num_hot_words
+            api_engine = APIEngine(address, citystatezip, redfin_link, dom, listing_id, self.type, ts, num_hot_words)
             api_engine.make_requests()
 
     def print_properties(self):
         for address_obj in self.addresses:
-            print address_obj.address
-            print address_obj.citystatezip
-            print ""
+            handle_err_msg(address_obj.address)
+            handle_err_msg(address_obj.citystatezip)
+            handle_err_msg("")
 

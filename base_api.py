@@ -3,6 +3,8 @@ import consts.xml_tags as tags
 from api_client import APIClient
 from abc import ABCMeta, abstractmethod
 
+from common.globals import handle_err_msg
+
 # create the client
 class BaseAPI(object):
     __metaclass__ = ABCMeta
@@ -58,12 +60,12 @@ class BaseAPI(object):
             elif tag == tags.TAG_CODE:
                 error_code = child.text
             else:
-                print "base_api parse_error_msg Unhandled tag " + tag
+                handle_err_msg("base_api parse_error_msg Unhandled tag " + tag)
 
         if error_code != self.REQ_SUCCESS:
             error_description = self.translate_code(error_code)
             print_error_msg = error_code + " " + error_description + " " + error_msg
-            print "Response from API ! " + print_error_msg
+            handle_err_msg("Response from API ! " + print_error_msg)
 
         return error_code
 
@@ -71,9 +73,9 @@ class BaseAPI(object):
         api = APIClient(self.path, self.params, paths.GET_METHOD)
         result = api.request()
 
-        print "Status code = " + str(result.status_code)
+        handle_err_msg("Status code = " + str(result.status_code))
 
         if result.status_code != 200:
-            print "Error hitting the API " + result.status_code
+            handle_err_msg("Error hitting the API " + result.status_code)
  
         return result

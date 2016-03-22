@@ -1,5 +1,6 @@
 import requests
 import consts.paths as paths
+import common.globals as globals
 
 class APIClient(object):
     """Creates an API client object
@@ -30,8 +31,8 @@ class APIClient(object):
 
         full_url = self.base_url + self.path
 
-        print "Fetching " + full_url
-        #print self.params
+        globals.handle_err_msg("Fetching " + full_url)
+        #globals.handle_err_msg(self.params)
 
         # send a request to the api server
         result = requests.request(
