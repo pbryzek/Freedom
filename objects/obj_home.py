@@ -1,3 +1,5 @@
+from common.globals import handle_err_msg
+
 class HomeObj(object):
     def __init__(self, type, address, citystatezip, dom, listing_id, beds, baths, yearbuilt, sqfootage, latitude, longitude, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, num_hot_words):
 
@@ -8,11 +10,11 @@ class HomeObj(object):
         self.address_st = ""
         if len(address_pieces) > 0:
             self.address_num = address_pieces[0]
-            address_num_len = len(self.address_num) + 1
-            self.address_st = self.address[address_num_len:]
+            address_num_len = len(self.address_num)
+            self.address_st = self.address[address_num_len:].strip()
 
         if "-" in self.address_num:
-             print "ERROR! found a dash in the property numbers: " + self.address
+             handle_err_msg("ERROR! found a dash in the property numbers: " + self.address)
 
         self.citystatezip = citystatezip.replace(",", " ") 
 
