@@ -1,7 +1,7 @@
 #This is the controls for parameters for the criteria we are filtering properties on
 
 #When handling err msgs, should those be printed to the screen?
-PRINT_ERR_MSG_TO_SCREEN = True
+PRINT_ERR_MSG_TO_SCREEN = False
 
 #When handling err msgs, should those be stored in the file system?
 WRITE_ERR_MSG_TO_FS = True
