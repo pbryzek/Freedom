@@ -18,6 +18,9 @@ class BaseHomeAPI(BaseAPI):
 
         self.num_hot_words = 0
         self.address = ""
+        self.city = ""
+        self.state = ""
+        self.zip = ""
         self.citystatezip = ""
         self.latitude = ""
         self.longitude = ""
@@ -25,6 +28,7 @@ class BaseHomeAPI(BaseAPI):
         self.beds = "" 
         self.baths = "" 
         self.sqfootage = "" 
+        self.lotsize = ""
 
         self.homelink = ""
         self.graphlink = ""
@@ -95,6 +99,8 @@ class BaseHomeAPI(BaseAPI):
                 self.yearbuilt = child.text
             elif tag == tags.TAG_SQ_FOOTAGE:
                 self.sqfootage = child.text
+            elif tag == tags.TAG_LOT_SIZE:
+                self.lotsize = child.text
             elif tag == tags.TAG_BATHROOMS:
                 self.baths = child.text
             elif tag == tags.TAG_BEDROOMS:
@@ -110,7 +116,7 @@ class BaseHomeAPI(BaseAPI):
             if tag == tags.TAG_RESULT:
                 self.parse_result(child)
 
-                home = HomeObj(self.type, self.address, self.citystatezip, self.dom, self.listing_id, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent, self.num_hot_words)
+                home = HomeObj(self.type, self.address, self.city, self.state, self.zip, self.dom, self.listing_id, self.beds, self.baths, self.yearbuilt, self.sqfootage, self.lotsize, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent, self.num_hot_words)
                 self.homes.append(home)
 
         if len(self.homes) > 1:

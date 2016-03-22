@@ -112,12 +112,15 @@ class PropertyParser(object):
         ts = int(time.time())
         for address_obj in self.addresses:
             address = address_obj.address
-            citystatezip = address_obj.citystatezip
+            city = address_obj.city
+            state = address_obj.state
+            zip = address_obj.zip
+            
             redfin_link = address_obj.redfin_link
             dom = address_obj.dom
             listing_id = address_obj.listing_id
             num_hot_words = address_obj.num_hot_words
-            api_engine = APIEngine(address, citystatezip, redfin_link, dom, listing_id, self.type, ts, num_hot_words)
+            api_engine = APIEngine(address, city, state, zip, redfin_link, dom, listing_id, self.type, ts, num_hot_words)
             api_engine.make_requests()
 
     def print_properties(self):

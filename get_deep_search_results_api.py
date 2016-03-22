@@ -3,23 +3,29 @@ from base_home_api import BaseHomeAPI
 import consts.paths as paths
 import consts.xml_tags as tags
 import xml.etree.ElementTree as ET
-from objects.obj_home import HomeObj
 
 
 # create the client
 class APIGetDeepSearchResultsRequest(BaseHomeAPI):
-    def __init__(self, type, address, citystatezip, dom, listing_id, num_hot_words, rentzestimate=False):
+    def __init__(self, type, address, city, state, zip, dom, listing_id, num_hot_words, rentzestimate=False):
         #Specific endpoint
         path = paths.GET_DEEP_SEARCH_RESULTS
 
         #Params to send with request
+        #TODO OMG centralize this.
+        citystatezip = city + ", " + state + " " + zip
         params = {"address": address, "citystatezip": citystatezip, "rentzestimate":rentzestimate}
 
         super(APIGetDeepSearchResultsRequest, self).__init__(type, path, params)
 
         #To build the home object
         self.address = address
-        self.citystatezip = citystatezip
+        self.city = city
+        self.state = state
+        self.zip = zip
+        #TODO centralize this formatting.
+        self.citystatezip = city + ", " + state + " " + zip
+
         self.dom = dom
         self.listing_id = listing_id
         self.num_hot_words = num_hot_words

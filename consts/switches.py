@@ -32,7 +32,7 @@ MIN_NUM_COMPS = 3
 SHORTSALE_SUPPORTED = False
 
 #Max price of a property we are interested in    
-MAX_PRICE = 750000
+MAX_PRICE = 800000
 #MAX_PRICE = 1500000
 
 #Min price of a property we are intereted in

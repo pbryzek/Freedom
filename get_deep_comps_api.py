@@ -29,9 +29,10 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
 
     #Called from the parent.
     def parse_address(self, node):
-        city = ""
-        state = ""
-        zip = ""
+        self.city = ""
+        self.state = ""
+        self.zip = ""
+
         for child in node:
             tag = child.tag
             if tag == tags.TAG_LATITUDE:
@@ -41,20 +42,18 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
             elif tag == tags.TAG_STREET:
                 self.address = child.text
             elif tag == tags.TAG_CITY:
-                city = child.text
+                self.city = child.text
             elif tag == tags.TAG_STATE:
-                state = child.text
+                self.state = child.text
             elif tag == tags.TAG_ZIP:
-                zip = child.text
-
-        self.citystatezip = city + ", " + state + " " + zip
+                self.zip = child.text
 
     def parse_comp(self, node):
         comp_score = node.attrib
         #Leverage the parent's parsing mechanism
         self.parse_result(node)
 
-        home = HomeObj(self.type, self.address, self.citystatezip, "", "", self.beds, self.baths, self.yearbuilt, self.sqfootage, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent, 0)
+        home = HomeObj(self.type, self.address, self.city, self.state, self.zip, "", "", self.beds, self.baths, self.yearbuilt, self.sqfootage, self.lotsize, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent, 0)
 
         comp = CompObj(home, self.principal_lat, self.principal_long, comp_score, self.soldprice, self.solddate)
         miles = comp.get_distance()

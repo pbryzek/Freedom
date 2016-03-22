@@ -6,7 +6,11 @@ class AddressObj(object):
 
     def __init__(self, address, city, state, zip, redfin_link, dom, listing_id, description):
         self.address = address.replace("(Unable to map)", "")
+        self.city = city
+        self.state = state
+        self.zip = zip
         self.citystatezip = city + ", " + state + " " + zip
+
         self.redfin_link = redfin_link
         self.dom = dom
         self.listing_id = listing_id

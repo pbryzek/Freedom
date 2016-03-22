@@ -15,9 +15,14 @@ class APIEngine(object):
     newline = "\n"
     csv_path = ""
     
-    def __init__(self, address, citystatezip, redfin_link, dom, listing_id, type, timestamp, num_hot_words):
+    def __init__(self, address, city, state, zip, redfin_link, dom, listing_id, type, timestamp, num_hot_words):
         self.address = address
-        self.citystatezip = citystatezip       
+        self.state = state
+        self.city = city
+        self.zip = zip
+        #TODO centralize this
+        self.citystatezip = city + ", " + state + " " + zip
+ 
         self.redfin_link = redfin_link
         self.dom = dom 
         self.listing_id = listing_id
@@ -39,7 +44,7 @@ class APIEngine(object):
         with open(self.csv_path, "a") as csvfile: 
             main_csv_string = ""
        
-            title_comma_separate = "prop type, address #, address st, citystatezip, dom, listing_id, beds, baths, sqfootage, yearbuilt, latitude, longitude, redfin link, chartlink, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, distance, # hot words, sold price, sold date, comp score, $/sqft"
+            title_comma_separate = "prop type, address #, address st, city, state, zip, dom, listing_id, beds, baths, sqfootage, yearbuilt, latitude, longitude, redfin link, chartlink, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, distance, # hot words, sold price, sold date, comp score, $/sqft"
 
             main_csv_string += title_comma_separate
             main_csv_string += self.newline
@@ -97,7 +102,6 @@ class APIEngine(object):
             mao_high_no_commison = arv - repair_high
             comission_high = self.calculate_commision(mao_high_no_commison)
             mao_high = mao_high_no_commison - comission_high
-            
 
             #If the mao_med is greater than our max price, skip this home
             if switches.MAX_PRICE < mao_med:
@@ -126,7 +130,7 @@ class APIEngine(object):
         ##    handle_err_msg("Get Search Results API did not return any results!")
         ##    return
 
-        get_deep_search_api = APIGetDeepSearchResultsRequest(self.type, self.address, self.citystatezip, self.dom, self.listing_id, self.num_hot_words, switches.RENTZESTIMATE)
+        get_deep_search_api = APIGetDeepSearchResultsRequest(self.type, self.address, self.city, self.state, self.zip, self.dom, self.listing_id, self.num_hot_words, switches.RENTZESTIMATE)
         homes = get_deep_search_api.request()
         if len(homes) == 0:
             handle_err_msg("Get Deep Search Results API did not return any results!")
