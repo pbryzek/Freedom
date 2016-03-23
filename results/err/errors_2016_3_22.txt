@@ -982,3 +982,5 @@ Status code = 200
 Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
 Only 0 deep comps found which is less than the min of 3 zpid=2112336540
 A total of 0 were found, skipping.
+Num Input files for Redfin > 1! Quitting!
+Property Downloader did not return True, Quitting!

@@ -6,6 +6,8 @@ ERR_MSG_PATH = ERR_MSG_PATH_DIR + ERR_FILE_NAME + ERR_FILE_EXTENSION
 
 RESULTS_PATH = "./results/"
 REDFIN_RESULTS_PATH = "redfin/homes"
+REDFIN_INPUT_PATH = "/Users/Paul/Downloads/"
+REDFIN_INPUT_PREFIX = "redfin_"
 
 INPUTS_PATH = "./inputs/"
 REDFIN_PROPERTIES_CSV = "redfin/properties.csv"
