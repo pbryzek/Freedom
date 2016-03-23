@@ -10,6 +10,10 @@ def handle_err_msg(err_msg):
     globals.handle_err_msg(err_msg)
 
 
+def format_citystatezip(city, state, zip):
+    citystatezip = city + ", " + state + " " + zip
+    return citystatezip
+
 class Globals(object):
 
     newline = "\n"

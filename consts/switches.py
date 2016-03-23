@@ -1,7 +1,7 @@
 #This is the controls for parameters for the criteria we are filtering properties on
 
 #Download Enabled
-DOWNLOAD_ENABLED = False
+DOWNLOAD_ENABLED = True
 
 #Parsing Enabled
 PARSER_ENABLED = True

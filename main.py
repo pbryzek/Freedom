@@ -7,8 +7,8 @@ from common.globals import handle_err_msg
 def execute_property(type):
 
     if switches.DOWNLOAD_ENABLED:
-        #pro_downloader = PropertyDownloader(type)
-        #ret_val = pro_downloader.open_chrome()
+        pro_downloader = PropertyDownloader(type)
+        ret_val = pro_downloader.open_chrome()
 
         if not ret_val:
             handle_err_msg("Property Downloader did not return True, Quitting!")

@@ -1,4 +1,5 @@
 from common.globals import handle_err_msg
+from common.globals import format_citystatezip
 
 class HomeObj(object):
     def __init__(self, type, address, city, state, zip, dom, listing_id, beds, baths, yearbuilt, sqfootage, lotsize, latitude, longitude, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, num_hot_words):
@@ -16,8 +17,7 @@ class HomeObj(object):
         if "-" in self.address_num:
              handle_err_msg("ERROR! found a dash in the property numbers: " + self.address)
 
-        #TODO this is done in 3 places, should be centralized.
-        self.citystatezip = city + ", " + state + " " + zip
+        self.citystatezip = format_citystatezip(city, state, zip)
 
         self.city = city
         self.state = state

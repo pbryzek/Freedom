@@ -9,6 +9,7 @@ import consts.switches as switches
 import common.globals as globals
 
 from common.globals import handle_err_msg
+from common.globals import format_citystatezip
 
 class APIEngine(object):
 
@@ -20,8 +21,7 @@ class APIEngine(object):
         self.state = state
         self.city = city
         self.zip = zip
-        #TODO centralize this
-        self.citystatezip = city + ", " + state + " " + zip
+        self.citystatezip = format_citystatezip(city, state, zip) 
  
         self.redfin_link = redfin_link
         self.dom = dom 
@@ -106,6 +106,8 @@ class APIEngine(object):
             #If the mao_med is greater than our max price, skip this home
             if switches.MAX_PRICE < mao_med:
                 return
+
+            print "main CSV " + main_csv_string
 
             #Finally write out the string
             csvfile.write(main_csv_string)

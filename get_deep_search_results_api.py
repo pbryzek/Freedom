@@ -3,7 +3,7 @@ from base_home_api import BaseHomeAPI
 import consts.paths as paths
 import consts.xml_tags as tags
 import xml.etree.ElementTree as ET
-
+from common.globals import format_citystatezip
 
 # create the client
 class APIGetDeepSearchResultsRequest(BaseHomeAPI):
@@ -12,8 +12,7 @@ class APIGetDeepSearchResultsRequest(BaseHomeAPI):
         path = paths.GET_DEEP_SEARCH_RESULTS
 
         #Params to send with request
-        #TODO OMG centralize this.
-        citystatezip = city + ", " + state + " " + zip
+        citystatezip = format_citystatezip(city, state, zip) 
         params = {"address": address, "citystatezip": citystatezip, "rentzestimate":rentzestimate}
 
         super(APIGetDeepSearchResultsRequest, self).__init__(type, path, params)
@@ -23,8 +22,7 @@ class APIGetDeepSearchResultsRequest(BaseHomeAPI):
         self.city = city
         self.state = state
         self.zip = zip
-        #TODO centralize this formatting.
-        self.citystatezip = city + ", " + state + " " + zip
+        self.citystatezip = citystatezip
 
         self.dom = dom
         self.listing_id = listing_id
