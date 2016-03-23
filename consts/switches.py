@@ -1,5 +1,11 @@
 #This is the controls for parameters for the criteria we are filtering properties on
 
+#Download Enabled
+DOWNLOAD_ENABLED = False
+
+#Parsing Enabled
+PARSER_ENABLED = True
+
 #When handling err msgs, should those be printed to the screen?
 PRINT_ERR_MSG_TO_SCREEN = False
 
@@ -16,8 +22,8 @@ PROPERTY_TYPE_ALL = "all"
 REDFIN_ENABLED = True
 
 #Max number of properties we are allowing the script to evaluate
-MAX_PROPERTIES_TO_EVALUATE = 5
-#MAX_PROPERTIES_TO_EVALUATE = -1
+#MAX_PROPERTIES_TO_EVALUATE = 5
+MAX_PROPERTIES_TO_EVALUATE = -1
 
 #Num comps we are requesting from the Zillow API, 25 is the max
 NUM_COMPS_REQUESTED = 25
@@ -36,7 +42,8 @@ MAX_PRICE = 800000
 #MAX_PRICE = 1500000
 
 #Min price of a property we are intereted in
-MIN_PRICE = 50000
+#MIN_PRICE = 50000
+MIN_PRICE = -1
 
 #The min number of Days on Market we are interested in    
 MIN_DOM = 30

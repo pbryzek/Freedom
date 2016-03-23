@@ -51,6 +51,8 @@ class PropertyParser(object):
             num_undisclosed = 0
 
             for line in lines:
+                print "line = " + line
+
                 if first:
                     first = False
                     continue
@@ -59,6 +61,10 @@ class PropertyParser(object):
                     break
 
                 cols = line.split(",") 
+
+                if (not cols) or (cols == "\n") or (len(cols) == 1 and (cols[0] == '\n') ):
+                    continue
+
                 price = int(cols[self.price_index])
          
                 is_shortsale_str = cols[self.shortsale_index].lower().strip()
