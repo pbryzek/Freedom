@@ -51,8 +51,6 @@ class PropertyParser(object):
             num_undisclosed = 0
 
             for line in lines:
-                print "line = " + line
-
                 if first:
                     first = False
                     continue

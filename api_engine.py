@@ -3,6 +3,7 @@ from get_chart_api import APIGetChartRequest
 from get_deep_comps_api import APIGetDeepCompsRequest
 from get_comps_api import APIGetCompsRequest
 from get_deep_search_results_api import APIGetDeepSearchResultsRequest
+from sf_bridge import SFBridge
 
 import consts.paths as paths
 import consts.switches as switches
@@ -107,7 +108,9 @@ class APIEngine(object):
             if switches.MAX_PRICE < mao_med:
                 return
 
-            print "main CSV " + main_csv_string
+            #This property passed all the tests, so input it into SalesForce
+            sf_bridge = SFBridge()
+            sf_bridge.create_listing_in_sf(home, mao_high, mao_med, mao_light, principal_arv, repair_high, repair_med, repair_light)             
 
             #Finally write out the string
             csvfile.write(main_csv_string)
