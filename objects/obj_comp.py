@@ -1,5 +1,7 @@
 import haversine
 
+import dateutil.parser
+
 class CompObj(object):
     def __init__(self, home, principal_lat, principal_long, comp_score, soldprice, solddate):
         self.home = home
@@ -9,6 +11,9 @@ class CompObj(object):
         self.soldprice = soldprice
         self.solddate = solddate
         self.sqftprice = int(soldprice) / int(home.sqfootage) 
+        solddate_date = dateutil.parser.parse(solddate)
+        self.solddate_sf = solddate_date.isoformat()
+        self.distance = self.get_distance()
 
     def get_distance(self):
         principal_point = (float(self.principal_lat), float(self.principal_long))

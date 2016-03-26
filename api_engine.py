@@ -110,7 +110,13 @@ class APIEngine(object):
 
             #This property passed all the tests, so input it into SalesForce
             sf_bridge = SFBridge()
-            sf_bridge.create_listing_in_sf(home, mao_high, mao_med, mao_light, principal_arv, repair_high, repair_med, repair_light)             
+            listing_id = sf_bridge.create_listing_in_sf(home, mao_high, mao_med, mao_light, principal_arv, repair_high, repair_med, repair_light, avg_sqft_price)    
+            if listing_id is None:
+                handle_err_msg("SF Bridge, listing id was None, returning here") 
+                return
+
+            for comp in comps:
+                sf_bridge.create_comp_in_sf(comp, listing_id)
 
             #Finally write out the string
             csvfile.write(main_csv_string)

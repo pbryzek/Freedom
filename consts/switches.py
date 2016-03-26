@@ -1,7 +1,7 @@
 #This is the controls for parameters for the criteria we are filtering properties on
 
-#Download Enabled
-DOWNLOAD_ENABLED = True
+#Download inputs Enabled
+DOWNLOAD_ENABLED = False
 
 #Parsing Enabled
 PARSER_ENABLED = True
@@ -22,8 +22,8 @@ PROPERTY_TYPE_ALL = "all"
 REDFIN_ENABLED = True
 
 #Max number of properties we are allowing the script to evaluate
-#MAX_PROPERTIES_TO_EVALUATE = 5
-MAX_PROPERTIES_TO_EVALUATE = -1
+MAX_PROPERTIES_TO_EVALUATE = 1
+#MAX_PROPERTIES_TO_EVALUATE = -1
 
 #Num comps we are requesting from the Zillow API, 25 is the max
 NUM_COMPS_REQUESTED = 25

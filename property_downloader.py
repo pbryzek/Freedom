@@ -23,7 +23,7 @@ class PropertyDownloader(object):
         if type == switches.PROPERTY_TYPE_REDFIN:
             self.url = "https://www.redfin.com/city/13654/CA/Oakland"
 
-    def open_chrome(self):
+    def download_redfin_input(self):
         self.webbrowser.get(self.url)
         download_button = self.webbrowser.find_element_by_link_text("(Download All)")
         download_button.send_keys(Keys.RETURN)

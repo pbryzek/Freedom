@@ -21,11 +21,55 @@ class SFBridge(object):
     def __init__(self):
         self.sf = Salesforce(username=self.username, password=self.password, security_token=self.token)
 
-    def create_listing_in_sf(self, home, mao_high, mao_med, mao_light, principal_arv, rehab_high, rehab_med, rehab_light):
-        st_name = home.address_st
-        st_num = home.address_num
+    def handle_sf_response(self, response):
+        #[(u'id', u'a0036000002aU8lAAE'), (u'success', True), (u'errors', [])]
+        was_success = response["success"]
+        
+        if was_success:
+            handle_err_msg("Response was a success")
+            return_id = response["id"]
+            return return_id
+        else:
+            errs = response["errors"]
+            handle_err_msg("Response had errors!" + str(errs))
+            return None
+
+    def create_comp_in_sf(self, comp, listing_id):
+        home = comp.home
+        params = self.create_home_params(home)
+
+        params["Listing__c"] = listing_id
+        params["Sold_Date__c"] = comp.solddate_sf
+        params["Sold_Price__c"] = comp.soldprice
+        params["Comp_Score__c"] = comp.comp_score
+        params["Distance__c"] = comp.distance
+        params["PPSqFt__c"] = comp.sqftprice
+   
+        comp_response = self.sf.Comp__c.create(params)
+        comp_ret = self.handle_sf_response(comp_response)
+        return comp_ret
+
+    def create_listing_in_sf(self, home, mao_high, mao_med, mao_light, principal_arv, rehab_high, rehab_med, rehab_light, avg_sqfootage):
+        params = self.create_home_params(home)
+
+        params["AVG_Sq_Ft__c"] = avg_sqfootage
+        params["MAO_High__c"] = mao_high
+        params["MAO_Light__c"] = mao_light
+        params["MAO_Medium__c"] = mao_med
+        params["Principal_ARV__c"] = principal_arv
+        params["Rehab_High__c"] = rehab_high
+        params["Rehab_Light__c"] = rehab_light
+        params["Rehab_Medium__c"] = rehab_med
+        params["Listing_Source__c"] = home.type
+        params["Hot_Words__c"] = home.num_hot_words
+        params["Rent_Estimate__c"] = home.rentestimate
+
+        listing_response = self.sf.Listing__c.create(params)
+        listing_ret = self.handle_sf_response(listing_response)
+        return listing_ret
+
+    def create_home_params(self, home): 
         params = {
-            "AVG_Sq_Ft__c" : home.sqfootage,
             "Baths__c" : home.baths,
             "Beds__c" : home.beds,
             "City__c" : home.city,
@@ -33,21 +77,11 @@ class SFBridge(object):
             "DOM__c" : home.dom,
             "Graph_Link__c" : home.graphlink, 
             "Home_Link__c" : home.homelink, 
-            "Hot_Words__c" : home.num_hot_words, 
             "Latitude__c" : home.latitude, 
-            "Listing_Source__c" : home.type,
             "Longitude__c" : home.longitude,
             "Lot_Size__c" : home.lotsize,
-            "MAO_High__c" : mao_high,
-            "MAO_Light__c" : mao_light,
-            "MAO_Medium__c" : mao_med,
             "Map_Link__c" : home.maplink,
-            "Principal_ARV__c" : principal_arv,
             "Redfin_Link__c" : home.redfin_link, 
-            "Rehab_High__c" : rehab_high,
-            "Rehab_Light__c" : rehab_light,
-            "Rehab_Medium__c" : rehab_med,
-            "Rent_Estimate__c" : home.rentestimate,
             "Sq_Ft__c" : home.sqfootage,
             "State__c" : home.state,
             "Street_Name__c" : home.address_st,
@@ -57,6 +91,4 @@ class SFBridge(object):
             "Zip_Code__c" : home.zip, 
             "ZPID__c" : home.zpid
           }
-
-        listing_response = self.sf.Listing__c.create(params)
-
+        return params

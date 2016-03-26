@@ -56,7 +56,7 @@ class APIGetDeepCompsRequest(BaseHomeAPI):
         home = HomeObj(self.type, self.address, self.city, self.state, self.zip, "", "", self.beds, self.baths, self.yearbuilt, self.sqfootage, self.lotsize, self.latitude, self.longitude, self.homelink, self.graphlink, self.maplink, self.compslink, self.zpid, self.zestimate, self.lastupdated, self.rentestimate, self.lastupdated_rent, 0)
 
         comp = CompObj(home, self.principal_lat, self.principal_long, comp_score, self.soldprice, self.solddate)
-        miles = comp.get_distance()
+        miles = comp.distance
         sqfootage = int(home.sqfootage)
 
         #Do rules to see if these are valid comps
