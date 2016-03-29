@@ -6,8 +6,11 @@ DOWNLOAD_ENABLED = False
 #Parsing Enabled
 PARSER_ENABLED = True
 
+#Jason Excel Automation Enabled
+JASON_ENABLED = True
+
 #When handling err msgs, should those be printed to the screen?
-PRINT_ERR_MSG_TO_SCREEN = False
+PRINT_ERR_MSG_TO_SCREEN = True
 
 #When handling err msgs, should those be stored in the file system?
 WRITE_ERR_MSG_TO_FS = True

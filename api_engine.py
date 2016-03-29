@@ -8,6 +8,9 @@ from sf_bridge import SFBridge
 import consts.paths as paths
 import consts.switches as switches
 import common.globals as globals
+import openpyxl
+import shutil
+import os
 
 from common.globals import handle_err_msg
 from common.globals import format_citystatezip
@@ -29,8 +32,10 @@ class APIEngine(object):
         self.listing_id = listing_id
         self.type = type
         self.num_hot_words = num_hot_words
+        self.timestamp = timestamp
         if type == switches.PROPERTY_TYPE_REDFIN:
             self.csv_path = paths.RESULTS_PATH + paths.REDFIN_RESULTS_PATH + "_" + str(timestamp) + paths.CSV_ENDING
+            
 
     #Based on the MAO, calculate the commision
     def calculate_commision(self, mao_no_commission):
@@ -120,6 +125,17 @@ class APIEngine(object):
 
             #Finally write out the string
             csvfile.write(main_csv_string)
+
+            if switches.JASON_ENABLED:
+                new_dir_name = paths.JASON_RESULTS_DIR + str(self.timestamp)
+                os.makedirs(new_dir_name)
+                jason_excel_sheet = new_dir_name + "/" + self.address + paths.XLS_ENDING 
+                #Copy over template to the results dir
+                shutil.copy2(paths.JASON_TEMPLATE_PATH, jason_excel_sheet)
+
+                wb = load_workbook(filename=jason_excel_sheet)
+                ws = wb.worksheets[0]
+                ws.cell(row=2, column=2).value = "This is a test"
 
             mao_header = "principal_arv,avg $/sqft,rehab_light,rehab_med,rehab_high,mao_light,mao_med,mao_high" 
             mao_comma_separated = str(principal_arv) + "," + str(avg_sqft_price) + "," + str(repair_light) + "," + str(repair_med) + "," + str(repair_high) + "," + str(mao_light) + "," + str(mao_med) + "," + str(mao_high)
