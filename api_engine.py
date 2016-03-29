@@ -4,6 +4,7 @@ from get_deep_comps_api import APIGetDeepCompsRequest
 from get_comps_api import APIGetCompsRequest
 from get_deep_search_results_api import APIGetDeepSearchResultsRequest
 from sf_bridge import SFBridge
+from openpyxl import load_workbook
 
 import consts.paths as paths
 import consts.switches as switches
@@ -129,13 +130,14 @@ class APIEngine(object):
             if switches.JASON_ENABLED:
                 new_dir_name = paths.JASON_RESULTS_DIR + str(self.timestamp)
                 os.makedirs(new_dir_name)
-                jason_excel_sheet = new_dir_name + "/" + self.address + paths.XLS_ENDING 
+                jason_excel_sheet = new_dir_name + "/" + self.address + paths.XLSX_ENDING 
                 #Copy over template to the results dir
                 shutil.copy2(paths.JASON_TEMPLATE_PATH, jason_excel_sheet)
 
-                wb = load_workbook(filename=jason_excel_sheet)
-                ws = wb.worksheets[0]
-                ws.cell(row=2, column=2).value = "This is a test"
+                print jason_excel_sheet
+                wb = load_workbook(jason_excel_sheet)
+                ws = wb.get_sheet_by_name("SFR ANALYSIS")
+                ws.cell(row=2, column=2).value = "hello"
 
             mao_header = "principal_arv,avg $/sqft,rehab_light,rehab_med,rehab_high,mao_light,mao_med,mao_high" 
             mao_comma_separated = str(principal_arv) + "," + str(avg_sqft_price) + "," + str(repair_light) + "," + str(repair_med) + "," + str(repair_high) + "," + str(mao_light) + "," + str(mao_med) + "," + str(mao_high)

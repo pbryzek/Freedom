@@ -12,14 +12,14 @@ REDFIN_INPUT_PREFIX = "redfin_"
 INPUTS_PATH = "./inputs/"
 REDFIN_PROPERTIES_CSV = "redfin/properties.csv"
 
-JASON_TEMPLATE_NAME = "jason_template.xls"
+JASON_TEMPLATE_NAME = "jason_template.xlsx"
 JASON_TEMPLATE_PATH = INPUTS_PATH + JASON_TEMPLATE_NAME
 
 JASON_RESULTS_DIR = RESULTS_PATH + "jason/"  
 JASON_RESULTS_NAME = "jason_"
 
 CSV_ENDING = ".csv"
-XLS_ENDING = ".xls"
+XLSX_ENDING = ".xlsx"
 
 #Zillow API Paths
 BASE_URL = "http://www.zillow.com/webservice/"
