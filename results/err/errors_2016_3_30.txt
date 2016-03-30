@@ -1,0 +1,126 @@
+Number of properties evaluating = 441
+Script only allowing the evaluation of 1 properties
+Number of properties skipped due to address Undisclosed = 0
+Number of properties skipped due to shortsale = 0
+Number of properties skipped due to price too high = 0
+Number of properties skipped due to price too low = 0
+Number of properties skipped due to DOM too low = 0
+Total Number of properties evaluated = 1
+
+
+Getting info for property: 4217 Balfour Ave Oakland, CA 94610
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property sq footage is 1366 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2796 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1418 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1430 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1248 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3665 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1438 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1438 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2832 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3024 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2728 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2863 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2400 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1281 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3060 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1492 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1400 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1320 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1637 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1619 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3144 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Found a total of 25 total comps
+Evaluating 4 valid comps
+Response was a success
+Response was a success
+Response was a success
+Response was a success
+Number of properties evaluating = 441
+Script only allowing the evaluation of 1 properties
+Number of properties skipped due to address Undisclosed = 0
+Number of properties skipped due to shortsale = 0
+Number of properties skipped due to price too high = 0
+Number of properties skipped due to price too low = 0
+Number of properties skipped due to DOM too low = 0
+Total Number of properties evaluated = 1
+
+
+Getting info for property: 4217 Balfour Ave Oakland, CA 94610
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property sq footage is 2796 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1418 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1430 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1248 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3665 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1438 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1438 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2832 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3024 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2728 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2863 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2400 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1281 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3060 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1492 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1400 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1320 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1637 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1619 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3144 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2293 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Found a total of 25 total comps
+Evaluating 4 valid comps
+Response was a success
+Response was a success
+Response was a success
+Response was a success
+Number of properties evaluating = 441
+Script only allowing the evaluation of 1 properties
+Number of properties skipped due to address Undisclosed = 0
+Number of properties skipped due to shortsale = 0
+Number of properties skipped due to price too high = 0
+Number of properties skipped due to price too low = 0
+Number of properties skipped due to DOM too low = 0
+Total Number of properties evaluated = 1
+
+
+Getting info for property: 4217 Balfour Ave Oakland, CA 94610
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property sq footage is 2796 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1366 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1418 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1430 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1248 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3665 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1438 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1438 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2832 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3024 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2728 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2863 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 2400 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1281 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3060 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1492 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1400 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1320 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1637 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 1619 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Comp property sq footage is 3144 which is outside the allowed range of min: 1657.5 max: 2242.5 skipping
+Found a total of 25 total comps
+Evaluating 4 valid comps
+Response was a success
+Response was a success
+Response was a success
+Response was a success

@@ -4,12 +4,13 @@ class AddressObj(object):
     
     hot_words = ["cheap", "handy man", "fast"]
 
-    def __init__(self, address, city, state, zip, redfin_link, dom, listing_id, description):
+    def __init__(self, address, city, state, zip, redfin_link, dom, listing_id, description, price):
         self.address = address.replace("(Unable to map)", "")
         self.city = city
         self.state = state
         self.zip = zip
         self.citystatezip = city + ", " + state + " " + zip
+        self.price = price
 
         self.redfin_link = redfin_link
         self.dom = dom

@@ -41,7 +41,7 @@ MIN_NUM_COMPS = 3
 SHORTSALE_SUPPORTED = False
 
 #Max price of a property we are interested in    
-MAX_PRICE = 800000
+MAX_PRICE = 1500000
 #MAX_PRICE = 1500000
 
 #Min price of a property we are intereted in
@@ -58,10 +58,12 @@ SQ_FOOTAGE_PERCENTAGE = .15
 MAX_DISTANCE_FROM_PRINCIPAL = .5
 
 #The commissions we will make per price point
+COMMISSION_POINT_0 = 5000
 COMMISSION_POINT_1 = 10000
 COMMISSION_POINT_2 = 15000
 COMMISSION_POINT_3 = 30000
 
+PRICE_POINT_0 = 200000
 PRICE_POINT_1 = 300000
 PRICE_POINT_2 = 1000000
 

@@ -12,6 +12,7 @@ import common.globals as globals
 import openpyxl
 import shutil
 import os
+import time
 
 from common.globals import handle_err_msg
 from common.globals import format_citystatezip
@@ -21,7 +22,7 @@ class APIEngine(object):
     newline = "\n"
     csv_path = ""
     
-    def __init__(self, address, city, state, zip, redfin_link, dom, listing_id, type, timestamp, num_hot_words):
+    def __init__(self, address, city, state, zip, redfin_link, dom, listing_id, type, timestamp, num_hot_words, price):
         self.address = address
         self.state = state
         self.city = city
@@ -34,6 +35,8 @@ class APIEngine(object):
         self.type = type
         self.num_hot_words = num_hot_words
         self.timestamp = timestamp
+        self.price = price
+
         if type == switches.PROPERTY_TYPE_REDFIN:
             self.csv_path = paths.RESULTS_PATH + paths.REDFIN_RESULTS_PATH + "_" + str(timestamp) + paths.CSV_ENDING
             
@@ -44,8 +47,10 @@ class APIEngine(object):
             return switches.COMMISSION_POINT_3
         elif (mao_no_commission - switches.COMMISSION_POINT_2) > switches.PRICE_POINT_1:
             return switches.COMMISSION_POINT_2
-        else:
+        elif (mao_no_commission - switches.COMMISSION_POINT_1) > switches.PRICE_POINT_0:
             return switches.COMMISSION_POINT_1
+        else:
+            return switches.COMMISSION_POINT_0
 
     def create_csv(self, home, comps):
         with open(self.csv_path, "a") as csvfile: 
@@ -89,7 +94,9 @@ class APIEngine(object):
             repair_high = (principal_sqfootage * switches.HIGH_REHAB)
 
             commision = 0
-            if principal_arv < switches.PRICE_POINT_1:
+            if principal_arv < switches.PRICE_POINT_0:
+                commision = switches.COMMISSION_POINT_0
+            elif principal_arv < switches.PRICE_POINT_1:
                 commision = switches.COMMISSION_POINT_1
             elif principal_arv < switches.PRICE_POINT_2:
                 commision = switches.COMMISSION_POINT_2
@@ -137,7 +144,49 @@ class APIEngine(object):
                 print jason_excel_sheet
                 wb = load_workbook(jason_excel_sheet)
                 ws = wb.get_sheet_by_name("SFR ANALYSIS")
-                ws.cell(row=2, column=2).value = "hello"
+                
+                full_address = home.address + " " + home.citystatezip
+                ws.cell(row=10, column=2).value = full_address
+                ws.cell(row=11, column=2).value = self.price
+
+                if self.type == switches.PROPERTY_TYPE_REDFIN:
+                    ws.cell(row=12, column=2).value = home.listing_id
+
+                ws.cell(row=14, column=2).value = home.baths
+                ws.cell(row=15, column=2).value = home.beds
+
+                today_date = time.strftime('%b %d, %Y')
+                ws.cell(row=16, column=2).value = today_date 
+
+                ws.cell(row=22, column=2).value = home.sqfootage
+                ws.cell(row=23, column=2).value = home.lotsize
+                ws.cell(row=24, column=2).value = home.yearbuilt
+                ws.cell(row=27, column=2).value = str((100 * switches.SQ_FOOTAGE_PERCENTAGE)) + "%"
+
+                row = 39
+                col = 1
+                for comp in comps:
+                    if row > 49:
+                        break
+
+                    full_address = comp.home.address + " " + comp.home.citystatezip
+                    ws.cell(row=row, column=1).value = full_address
+                    ws.cell(row=row, column=2).value = comp.soldprice
+                    ws.cell(row=row, column=3).value = comp.home.sqfootage
+                    ws.cell(row=row, column=5).value = comp.home.lotsize
+                    ws.cell(row=row, column=6).value = comp.home.yearbuilt
+                    ws.cell(row=row, column=7).value = comp.home.dom
+                    ws.cell(row=row, column=8).value = comp.solddate
+                    ws.cell(row=row, column=9).value = comp.distance
+                    ws.cell(row=row, column=11).value = self.type
+                    
+                    row += 1 
+
+                ws.cell(row=81, column=2).value = comission_med
+                ws.cell(row=93, column=3).value = comission_med
+                ws.cell(row=93, column=4).value = switches.ARV_PERCENTAGE
+
+                wb.save(jason_excel_sheet)
 
             mao_header = "principal_arv,avg $/sqft,rehab_light,rehab_med,rehab_high,mao_light,mao_med,mao_high" 
             mao_comma_separated = str(principal_arv) + "," + str(avg_sqft_price) + "," + str(repair_light) + "," + str(repair_med) + "," + str(repair_high) + "," + str(mao_light) + "," + str(mao_med) + "," + str(mao_high)

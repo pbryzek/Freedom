@@ -97,7 +97,7 @@ class PropertyParser(object):
 
                 description = "Cheap Home that sells FAST! Handy man special!"
 
-                address_obj = AddressObj(address, city, state, zip, redfin_link, dom_str, listing_id, description)
+                address_obj = AddressObj(address, city, state, zip, redfin_link, dom_str, listing_id, description, price)
                 self.addresses.append(address_obj)
  
                 num_properties_analyzed += 1
@@ -123,8 +123,10 @@ class PropertyParser(object):
             redfin_link = address_obj.redfin_link
             dom = address_obj.dom
             listing_id = address_obj.listing_id
+            price = address_obj.price
             num_hot_words = address_obj.num_hot_words
-            api_engine = APIEngine(address, city, state, zip, redfin_link, dom, listing_id, self.type, ts, num_hot_words)
+
+            api_engine = APIEngine(address, city, state, zip, redfin_link, dom, listing_id, self.type, ts, num_hot_words, price)
             api_engine.make_requests()
 
     def print_properties(self):
