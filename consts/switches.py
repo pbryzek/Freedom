@@ -25,8 +25,8 @@ PROPERTY_TYPE_ALL = "all"
 REDFIN_ENABLED = True
 
 #Max number of properties we are allowing the script to evaluate
-MAX_PROPERTIES_TO_EVALUATE = 1
-#MAX_PROPERTIES_TO_EVALUATE = -1
+#MAX_PROPERTIES_TO_EVALUATE = 1
+MAX_PROPERTIES_TO_EVALUATE = -1
 
 #Num comps we are requesting from the Zillow API, 25 is the max
 NUM_COMPS_REQUESTED = 25

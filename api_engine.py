@@ -52,6 +52,20 @@ class APIEngine(object):
         else:
             return switches.COMMISSION_POINT_0
 
+    def format_float_for_excel(self, str_val):
+        str_val = str_val.strip()
+        if str_val:
+            int_val = float(str_val)
+            return int_val
+        return str_val
+
+    def format_int_for_excel(self, str_val):
+        str_val = str_val.strip()
+        if str_val:
+            int_val = int(str_val)
+            return int_val
+        return str_val
+
     def create_csv(self, home, comps):
         with open(self.csv_path, "a") as csvfile: 
             main_csv_string = ""
@@ -136,12 +150,12 @@ class APIEngine(object):
 
             if switches.JASON_ENABLED:
                 new_dir_name = paths.JASON_RESULTS_DIR + str(self.timestamp)
-                os.makedirs(new_dir_name)
+                if not os.path.isdir(new_dir_name):
+                    os.makedirs(new_dir_name)
                 jason_excel_sheet = new_dir_name + "/" + self.address + paths.XLSX_ENDING 
                 #Copy over template to the results dir
                 shutil.copy2(paths.JASON_TEMPLATE_PATH, jason_excel_sheet)
 
-                print jason_excel_sheet
                 wb = load_workbook(jason_excel_sheet)
                 ws = wb.get_sheet_by_name("SFR ANALYSIS")
                 
@@ -152,15 +166,15 @@ class APIEngine(object):
                 if self.type == switches.PROPERTY_TYPE_REDFIN:
                     ws.cell(row=12, column=2).value = home.listing_id
 
-                ws.cell(row=14, column=2).value = home.baths
-                ws.cell(row=15, column=2).value = home.beds
+                ws.cell(row=14, column=2).value = self.format_int_for_excel(home.beds)
+                ws.cell(row=15, column=2).value = self.format_float_for_excel(home.baths)
 
                 today_date = time.strftime('%b %d, %Y')
                 ws.cell(row=16, column=2).value = today_date 
 
-                ws.cell(row=22, column=2).value = home.sqfootage
-                ws.cell(row=23, column=2).value = home.lotsize
-                ws.cell(row=24, column=2).value = home.yearbuilt
+                ws.cell(row=22, column=2).value = self.format_int_for_excel(home.sqfootage)
+                ws.cell(row=23, column=2).value = self.format_int_for_excel(home.lotsize)
+                ws.cell(row=24, column=2).value = self.format_int_for_excel(home.yearbuilt)
                 ws.cell(row=27, column=2).value = str((100 * switches.SQ_FOOTAGE_PERCENTAGE)) + "%"
 
                 row = 39
@@ -171,10 +185,10 @@ class APIEngine(object):
 
                     full_address = comp.home.address + " " + comp.home.citystatezip
                     ws.cell(row=row, column=1).value = full_address
-                    ws.cell(row=row, column=2).value = comp.soldprice
-                    ws.cell(row=row, column=3).value = comp.home.sqfootage
-                    ws.cell(row=row, column=5).value = comp.home.lotsize
-                    ws.cell(row=row, column=6).value = comp.home.yearbuilt
+                    ws.cell(row=row, column=2).value = self.format_int_for_excel(comp.soldprice)
+                    ws.cell(row=row, column=3).value = self.format_int_for_excel(comp.home.sqfootage)
+                    ws.cell(row=row, column=5).value = self.format_int_for_excel(comp.home.lotsize)
+                    ws.cell(row=row, column=6).value = self.format_int_for_excel(comp.home.yearbuilt)
                     ws.cell(row=row, column=7).value = comp.home.dom
                     ws.cell(row=row, column=8).value = comp.solddate
                     ws.cell(row=row, column=9).value = comp.distance

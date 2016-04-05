@@ -71,6 +71,7 @@ class SFBridge(object):
         params["Listing_Source__c"] = self.normalize_data(home.type)
         params["Hot_Words__c"] = self.normalize_data(home.num_hot_words)
         params["Rent_Estimate__c"] = self.normalize_data(home.rentestimate)
+        params["MLS__c"] = self.normalize_data(home.listing_id)
 
         try:
             listing_response = self.sf.Listing__c.create(params)
