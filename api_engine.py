@@ -21,7 +21,8 @@ class APIEngine(object):
 
     newline = "\n"
     csv_path = ""
-    
+    csv_path_tier2 = ""   
+ 
     def __init__(self, address, city, state, zip, redfin_link, dom, listing_id, type, timestamp, num_hot_words, price):
         self.address = address
         self.state = state
@@ -39,6 +40,7 @@ class APIEngine(object):
 
         if type == switches.PROPERTY_TYPE_REDFIN:
             self.csv_path = paths.RESULTS_PATH + paths.REDFIN_RESULTS_PATH + "_" + str(timestamp) + paths.CSV_ENDING
+            self.csv_path_tier2 = paths.RESULTS_PATH + paths.REDFIN_RESULTS_PATH_TIER2 + "_" + str(timestamp) + paths.CSV_ENDING
             
 
     #Based on the MAO, calculate the commision
@@ -67,7 +69,13 @@ class APIEngine(object):
         return str_val
 
     def create_csv(self, home, comps):
-        with open(self.csv_path, "a") as csvfile: 
+        file_path = ""
+        if home.tier == 1:
+            file_path = self.csv_path
+        else:
+            file_path = self.csv_path_tier2
+
+        with open(file_path, "a") as csvfile: 
             main_csv_string = ""
        
             title_comma_separate = "prop type, address #, address st, city, state, zip, dom, listing_id, beds, baths, sqfootage, lotsize, yearbuilt, latitude, longitude, redfin link, chartlink, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, distance, # hot words, sold price, sold date, comp score, $/sqft"
@@ -142,85 +150,86 @@ class APIEngine(object):
                 handle_err_msg("SF Bridge, listing id was None, returning here") 
                 return
 
-            for comp in comps:
-                sf_bridge.create_comp_in_sf(comp, listing_id)
+            self.save_to_jason_excel(home, comps, comission_med)
+
+            #Only tier 1 properties are saved to SalesForce
+            if home.tier == 1:
+                for comp in comps:
+                    sf_bridge.create_comp_in_sf(comp, listing_id)
 
             #Finally write out the string
             csvfile.write(main_csv_string)
 
-            if switches.JASON_ENABLED:
-                new_dir_name = paths.JASON_RESULTS_DIR + str(self.timestamp)
-                if not os.path.isdir(new_dir_name):
-                    os.makedirs(new_dir_name)
-                jason_excel_sheet = new_dir_name + "/" + self.address + paths.XLSX_ENDING 
-                #Copy over template to the results dir
-                shutil.copy2(paths.JASON_TEMPLATE_PATH, jason_excel_sheet)
-
-                wb = load_workbook(jason_excel_sheet)
-                ws = wb.get_sheet_by_name("SFR ANALYSIS")
-                
-                full_address = home.address + " " + home.citystatezip
-                ws.cell(row=10, column=2).value = full_address
-                ws.cell(row=11, column=2).value = self.price
-
-                if self.type == switches.PROPERTY_TYPE_REDFIN:
-                    ws.cell(row=12, column=2).value = home.listing_id
-
-                ws.cell(row=14, column=2).value = self.format_int_for_excel(home.beds)
-                ws.cell(row=15, column=2).value = self.format_float_for_excel(home.baths)
-
-                today_date = time.strftime('%b %d, %Y')
-                ws.cell(row=16, column=2).value = today_date 
-
-                ws.cell(row=22, column=2).value = self.format_int_for_excel(home.sqfootage)
-                ws.cell(row=23, column=2).value = self.format_int_for_excel(home.lotsize)
-                ws.cell(row=24, column=2).value = self.format_int_for_excel(home.yearbuilt)
-                ws.cell(row=27, column=2).value = str((100 * switches.SQ_FOOTAGE_PERCENTAGE)) + "%"
-
-                row = 39
-                col = 1
-                for comp in comps:
-                    if row > 49:
-                        break
-
-                    full_address = comp.home.address + " " + comp.home.citystatezip
-                    ws.cell(row=row, column=1).value = full_address
-                    ws.cell(row=row, column=2).value = self.format_int_for_excel(comp.soldprice)
-                    ws.cell(row=row, column=3).value = self.format_int_for_excel(comp.home.sqfootage)
-                    ws.cell(row=row, column=5).value = self.format_int_for_excel(comp.home.lotsize)
-                    ws.cell(row=row, column=6).value = self.format_int_for_excel(comp.home.yearbuilt)
-                    ws.cell(row=row, column=7).value = comp.home.dom
-                    ws.cell(row=row, column=8).value = comp.solddate
-                    ws.cell(row=row, column=9).value = comp.distance
-                    ws.cell(row=row, column=11).value = self.type
-                    
-                    row += 1 
-
-                ws.cell(row=81, column=2).value = comission_med
-                ws.cell(row=93, column=3).value = comission_med
-                ws.cell(row=93, column=4).value = switches.ARV_PERCENTAGE
-
-                wb.save(jason_excel_sheet)
-
-            mao_header = "principal_arv,avg $/sqft,rehab_light,rehab_med,rehab_high,mao_light,mao_med,mao_high" 
+            mao_header = "principal_arv,avg $/sqft,rehab_light,rehab_med,rehab_high,mao_light,mao_med,mao_high"
             mao_comma_separated = str(principal_arv) + "," + str(avg_sqft_price) + "," + str(repair_light) + "," + str(repair_med) + "," + str(repair_high) + "," + str(mao_light) + "," + str(mao_med) + "," + str(mao_high)
             csvfile.write(mao_header)
             csvfile.write(self.newline)
             csvfile.write(mao_comma_separated)
-            csvfile.write(self.newline)           
- 
             csvfile.write(self.newline)
+
+            csvfile.write(self.newline)
+
+            
+    def save_to_jason_excel(self, home, comps, comission_med):
+        if home.tier == 1 and switches.JASON_ENABLED:
+            new_dir_name = paths.JASON_RESULTS_DIR + str(self.timestamp)
+            if not os.path.isdir(new_dir_name):
+                os.makedirs(new_dir_name)
+            jason_excel_sheet = new_dir_name + "/" + self.address + paths.XLSX_ENDING
+            #Copy over template to the results dir
+            shutil.copy2(paths.JASON_TEMPLATE_PATH, jason_excel_sheet)
+
+            wb = load_workbook(jason_excel_sheet)
+            ws = wb.get_sheet_by_name("SFR ANALYSIS")
+
+            full_address = home.address + " " + home.citystatezip
+            ws.cell(row=10, column=2).value = full_address
+            ws.cell(row=11, column=2).value = self.price
+
+            if self.type == switches.PROPERTY_TYPE_REDFIN:
+                ws.cell(row=12, column=2).value = home.listing_id
+
+            ws.cell(row=14, column=2).value = self.format_int_for_excel(home.beds)
+            ws.cell(row=15, column=2).value = self.format_float_for_excel(home.baths)
+
+            today_date = time.strftime('%b %d, %Y')
+            ws.cell(row=16, column=2).value = today_date
+
+            ws.cell(row=22, column=2).value = self.format_int_for_excel(home.sqfootage)
+            ws.cell(row=23, column=2).value = self.format_int_for_excel(home.lotsize)
+            ws.cell(row=24, column=2).value = self.format_int_for_excel(home.yearbuilt)
+            ws.cell(row=27, column=2).value = str((100 * switches.SQ_FOOTAGE_PERCENTAGE)) + "%"
+
+            row = 39
+            col = 1
+            for comp in comps:
+                if row > 49:
+                    break
+
+                full_address = comp.home.address + " " + comp.home.citystatezip
+                ws.cell(row=row, column=1).value = full_address
+                ws.cell(row=row, column=2).value = self.format_int_for_excel(comp.soldprice)
+                ws.cell(row=row, column=3).value = self.format_int_for_excel(comp.home.sqfootage)
+                ws.cell(row=row, column=5).value = self.format_int_for_excel(comp.home.lotsize)
+                ws.cell(row=row, column=6).value = self.format_int_for_excel(comp.home.yearbuilt)
+                ws.cell(row=row, column=7).value = comp.home.dom
+                ws.cell(row=row, column=8).value = comp.solddate
+                ws.cell(row=row, column=9).value = comp.distance
+                ws.cell(row=row, column=11).value = self.type
+
+                row += 1
+
+            ws.cell(row=81, column=2).value = comission_med
+            ws.cell(row=93, column=3).value = comission_med
+            ws.cell(row=93, column=4).value = switches.ARV_PERCENTAGE
+
+            wb.save(jason_excel_sheet)
+
 
     def make_requests(self):
         handle_err_msg("")
         handle_err_msg("Getting info for property: " + self.address + " " + self.citystatezip)
         #First get the zpid of the home in question
-
-        ##get_search_api = APIGetSearchResultsRequest(self.type, self.address, self.citystatezip, switches.RENTZESTIMATE)
-        ##homes = get_search_api.request()
-        ##if len(homes) == 0:
-        ##    handle_err_msg("Get Search Results API did not return any results!")
-        ##    return
 
         get_deep_search_api = APIGetDeepSearchResultsRequest(self.type, self.address, self.city, self.state, self.zip, self.dom, self.listing_id, self.num_hot_words, switches.RENTZESTIMATE)
         homes = get_deep_search_api.request()
@@ -230,37 +239,21 @@ class APIEngine(object):
 
         home = homes[0]
         home.redfin_link = self.redfin_link
-        #self.create_csv(home, [])
-        #return 
 
         zpid = home.zpid
 
         #Get the deep comps for that home
         deep_comps_api = APIGetDeepCompsRequest(self.type, zpid, switches.NUM_COMPS_REQUESTED, home.latitude, home.longitude, home.sqfootage)
-        deep_comps = deep_comps_api.request()
+        deep_comps, tier = deep_comps_api.request()
 
-        #self.create_csv(home, deep_comps)
-        #return
-
-        if len(deep_comps) < switches.MIN_NUM_COMPS:
-            handle_err_msg("Only " + str(len(deep_comps)) + " deep comps found which is less than the min of " + str(switches.MIN_NUM_COMPS) + " zpid=" + zpid)
-
-        #Get the comps for that home
-        comps = []
-        #comps_api = APIGetCompsRequest(self.type, zpid, switches.NUM_COMPS_REQUESTED)
-        #comps = comps_api.request()
-
-        #if len(comps) < switches.MIN_NUM_COMPS:
-        #    handle_err_msg("Only " + str(len(comps)) + " comps found which is less than the min of " + str(switches.MIN_NUM_COMPS) + " zpid=" + zpid)
-
-        total_comps = len(deep_comps) + len(comps)
-        if total_comps < switches.MIN_NUM_COMPS:
-            handle_err_msg("A total of " + str(total_comps) + " were found, skipping.")
+        num_comps = len(deep_comps)
+        if num_comps < switches.MIN_NUM_COMPS:
+            handle_err_msg("A total of " + str(num_comps) + " were found, skipping.")
             return 
 
-        #Get the chart api
-        #chart_api = APIGetChartRequest(zpid)
-        #home.chartlink = chart_api.request()
-
+        #If the home tier has not already been degraded for previous rules, adjust it based on the comp analysis
+        if home.tier != 2:
+            home.tier = tier
+ 
         #Finally put the results in a csv 
         self.create_csv(home, deep_comps)

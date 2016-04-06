@@ -71,9 +71,14 @@ class PropertyParser(object):
                 ###
                 #Do initial filter of the properties
                 ###
-                if dom_str != '' and (int(dom_str) < switches.MIN_DOM):
-                    num_dom_skipped += 1
-                    continue
+                if dom_str != '':
+                    dom_int = int(dom_str)
+                    if dom_int < switches.MIN_DOM:  
+                        num_dom_skipped += 1
+                        continue
+                    if switches.MAX_DOM != -1 and dom_int > switches.MAX_DOM:
+                        num_dom_skipped += 1
+                        continue
   
                 if (not switches.SHORTSALE_SUPPORTED) and (is_shortsale_str == "true"):
                     num_shortsales_skipped += 1

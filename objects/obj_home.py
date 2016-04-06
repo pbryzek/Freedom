@@ -1,5 +1,6 @@
 from common.globals import handle_err_msg
 from common.globals import format_citystatezip
+import consts.switches as switches
 
 class HomeObj(object):
     def __init__(self, type, address, city, state, zip, dom, listing_id, beds, baths, yearbuilt, sqfootage, lotsize, latitude, longitude, homelink, graphlink, maplink, compslink, zpid, zestimate, lastupdated, rentestimate, lastupdated_rent, num_hot_words):
@@ -39,7 +40,9 @@ class HomeObj(object):
         self.chartlink = ""
         self.redfin_link = ""
 
-        self.zpid = zpid 
+        self.zpid = zpid
+        if not zestimate:
+            zestimate = "-1" 
         self.zestimate = zestimate 
         self.lastupdated = lastupdated 
         self.rentestimate = rentestimate 
@@ -48,12 +51,38 @@ class HomeObj(object):
         #Distance from home, used to keep the csv consistent
         self.distance = 0
 
-        self.dom = dom
+        #If the DOM is less than the standard, then it is a tier 2 property
+        if dom and not (dom is None):
+            self.dom = dom
+        else:
+            self.dom = 0
+
+        if dom < switches.MIN_DOM:
+            self.tier = 2
+        else:
+            self.tier = 1
         self.listing_id = listing_id
 
         self.type = type
 
     def create_csv(self):
-        comma_separated = self.type + "," + self.address_num + "," + self.address_st + "," + self.city + "," + self.state + "," + self.zip + "," + str(self.dom) + "," + str(self.listing_id) + "," + self.beds + "," + self.baths + "," + self.sqfootage + "," + str(self.lotsize) + "," + self.yearbuilt + "," + self.latitude + "," + self.longitude + "," + self.redfin_link + "," + self.chartlink + "," + self.homelink + "," + self.graphlink + "," + self.maplink + "," + self.compslink + "," + self.zpid + "," + self.zestimate + "," + self.lastupdated + "," + self.rentestimate + "," + self.lastupdated_rent + "," + str(self.distance) + "," + str(self.num_hot_words)
+        if self.homelink is None:
+            print "self.homelink is null"
+        if self.graphlink is None:
+            print "self.graphlink is None"
+        if self.maplink is None:
+            print "self.maplink is null"
+        if self.compslink is None:
+            print "self.compslink is None"
+        if self.zpid is None:
+            print "self.zpid is null"
+        if self.zestimate is None:
+            print "self.zestimate is None"
+        comma_separated_1 = self.type + "," + self.address_num + "," + self.address_st + "," + self.city + "," + self.state + "," + self.zip + "," 
+        comma_separated_2 = str(self.dom) + "," + str(self.listing_id) + "," + self.beds + "," + self.baths + "," + self.sqfootage + "," + str(self.lotsize) + "," 
+        comma_separated_3 = self.yearbuilt + "," + self.latitude + "," + self.longitude + "," + self.redfin_link + "," + self.chartlink + "," 
+        comma_separated_4 = self.homelink + "," + self.graphlink + "," + self.maplink + "," + self.compslink + "," + self.zpid + "," + self.zestimate + "," 
+        comma_separated_5 = self.lastupdated + "," + self.rentestimate + "," + self.lastupdated_rent + "," + str(self.distance) + "," + str(self.num_hot_words)
 
+        comma_separated = comma_separated_1 + comma_separated_2 + comma_separated_3 + comma_separated_4 + comma_separated_5
         return comma_separated

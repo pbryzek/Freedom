@@ -48,14 +48,45 @@ MAX_PRICE = 1500000
 #MIN_PRICE = 50000
 MIN_PRICE = -1
 
+#A list holding all valid Tiers
+TIER_1_KEY = 1
+TIER_2_KEY = 2
+VALID_TIERS = [TIER_1_KEY, TIER_2_KEY]
+
 #The min number of Days on Market we are interested in    
 MIN_DOM = 30
+MAX_DOM = -1
 
 #The max +- sq footage that the comparable property needs to be within the principal property
 SQ_FOOTAGE_PERCENTAGE = .15
+SQ_FOOTAGE_PERCENTAGE_TIER2 = .25
 
 #The max distance that the comparable property needs to be within the principal property in miles
 MAX_DISTANCE_FROM_PRINCIPAL = .5
+MAX_DISTANCE_FROM_PRINCIPAL_TIER2 = .75
+
+#Valid number of months for Comp Sold Date in months
+SOLD_PRICE_INTERVAL = 6
+SOLD_PRICE_INTERVAL_TIER2 = 7
+
+#Store all of the tier1 vs tier2 data in a dict
+TIER_DOM_KEY = "dom"
+TIER_SQFT_KEY = "sqft_percent"
+TIER_DISTANCE_KEY = "max_distance"
+TIER_SOLD_KEY = "sold_interval"
+
+TIER_VALUES = {
+    TIER_1_KEY: {
+        TIER_SQFT_KEY: SQ_FOOTAGE_PERCENTAGE,
+        TIER_DISTANCE_KEY: MAX_DISTANCE_FROM_PRINCIPAL,
+        TIER_SOLD_KEY: SOLD_PRICE_INTERVAL
+    }, 
+    TIER_2_KEY: {
+        TIER_SQFT_KEY: SQ_FOOTAGE_PERCENTAGE_TIER2,
+        TIER_DISTANCE_KEY: MAX_DISTANCE_FROM_PRINCIPAL_TIER2,
+        TIER_SOLD_KEY: SOLD_PRICE_INTERVAL_TIER2
+    }
+}
 
 #The commissions we will make per price point
 COMMISSION_POINT_0 = 5000
@@ -75,5 +106,3 @@ HIGH_REHAB = 60
 #The percent of the ARV that we will use for the MAO
 ARV_PERCENTAGE = .75
 
-#Valid number of months for Comp Sold Date in months
-SOLD_PRICE_INTERVAL = 6
