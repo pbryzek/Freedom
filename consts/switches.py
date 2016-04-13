@@ -1,7 +1,7 @@
 #This is the controls for parameters for the criteria we are filtering properties on
 
 #Download inputs Enabled
-DOWNLOAD_ENABLED = False
+DOWNLOAD_ENABLED = True
 
 #Parsing Enabled
 PARSER_ENABLED = True
@@ -25,7 +25,7 @@ PROPERTY_TYPE_ALL = "all"
 REDFIN_ENABLED = True
 
 #Max number of properties we are allowing the script to evaluate
-#MAX_PROPERTIES_TO_EVALUATE = 1
+MAX_PROPERTIES_TO_EVALUATE = 1
 MAX_PROPERTIES_TO_EVALUATE = -1
 
 #Num comps we are requesting from the Zillow API, 25 is the max
@@ -70,7 +70,6 @@ SOLD_PRICE_INTERVAL = 6
 SOLD_PRICE_INTERVAL_TIER2 = 7
 
 #Store all of the tier1 vs tier2 data in a dict
-TIER_DOM_KEY = "dom"
 TIER_SQFT_KEY = "sqft_percent"
 TIER_DISTANCE_KEY = "max_distance"
 TIER_SOLD_KEY = "sold_interval"

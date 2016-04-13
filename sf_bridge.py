@@ -23,6 +23,16 @@ class SFBridge(object):
     def __init__(self):
         self.sf = Salesforce(username=self.username, password=self.password, security_token=self.token)
 
+    def get_comps_by_listing_name(self, listing_name):
+        comp_objs = self.sf.Comp__c.get_by_custom_id("Listing__c", listing_name)
+        for comp_obj in comp_objs:
+            print comp_obj
+
+
+    def get_listing_by_id(self, listing_id):
+        listing_obj = self.sf.Listing__c.get(listing_id)
+        return listing_obj
+
     def handle_sf_response(self, response):
         #[(u'id', u'a0036000002aU8lAAE'), (u'success', True), (u'errors', [])]
         was_success = response["success"]
@@ -60,6 +70,13 @@ class SFBridge(object):
     def create_listing_in_sf(self, home, mao_high, mao_med, mao_light, principal_arv, rehab_high, rehab_med, rehab_light, avg_sqfootage):
         params = self.create_home_params(home)
 
+        tier_sf = ""
+        if home.tier == 1:
+            tier_sf = "Tier_1"
+        else:
+            tier_sf = "Tier_2"
+
+        #params["RecordType"] = tier_sf
         params["AVG_Sq_Ft__c"] = self.normalize_data(avg_sqfootage)
         params["MAO_High__c"] = self.normalize_data(mao_high)
         params["MAO_Light__c"] = self.normalize_data(mao_light)
@@ -78,7 +95,6 @@ class SFBridge(object):
         except:
             duplicate_str = "duplicate value found: Unique_Identifier__c duplicates value on record with id: "
             err_msg = str(sys.exc_info()[1])
-            index_dup = err_msg.index(duplicate_str)
             if duplicate_str in err_msg:
                 len_dup_str = len(duplicate_str)
                 dup_index = err_msg.index(duplicate_str) + len_dup_str
@@ -87,6 +103,9 @@ class SFBridge(object):
  
                 listing_response = self.sf.Listing__c.update(listing_id, params)
                 return listing_id 
+            else:
+                handle_err_msg("Got unexpected error from SalesForce, returning None! " + err_msg)
+                return None    
 
         listing_ret = self.handle_sf_response(listing_response)
         return listing_ret

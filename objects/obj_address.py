@@ -22,6 +22,7 @@ class AddressObj(object):
         clean_description = description.strip().lower()
 
         self.num_hot_words = 0
-        for hot_word.strip().lower() in self.hot_words:
-            if hot_word in clean_description:
+        for hot_word in self.hot_words:
+            hot_word_clean = hot_word.strip().lower()
+            if hot_word_clean in clean_description:
                 self.num_hot_words += 1

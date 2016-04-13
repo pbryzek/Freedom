@@ -152,10 +152,8 @@ class APIEngine(object):
 
             self.save_to_jason_excel(home, comps, comission_med)
 
-            #Only tier 1 properties are saved to SalesForce
-            if home.tier == 1:
-                for comp in comps:
-                    sf_bridge.create_comp_in_sf(comp, listing_id)
+            for comp in comps:
+                sf_bridge.create_comp_in_sf(comp, listing_id)
 
             #Finally write out the string
             csvfile.write(main_csv_string)
@@ -171,7 +169,7 @@ class APIEngine(object):
 
             
     def save_to_jason_excel(self, home, comps, comission_med):
-        if home.tier == 1 and switches.JASON_ENABLED:
+        if switches.JASON_ENABLED:
             new_dir_name = paths.JASON_RESULTS_DIR + str(self.timestamp)
             if not os.path.isdir(new_dir_name):
                 os.makedirs(new_dir_name)
