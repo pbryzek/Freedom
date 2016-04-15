@@ -25,7 +25,7 @@ PROPERTY_TYPE_ALL = "all"
 REDFIN_ENABLED = True
 
 #Max number of properties we are allowing the script to evaluate
-MAX_PROPERTIES_TO_EVALUATE = 1
+#MAX_PROPERTIES_TO_EVALUATE = 1
 MAX_PROPERTIES_TO_EVALUATE = -1
 
 #Num comps we are requesting from the Zillow API, 25 is the max
@@ -59,15 +59,17 @@ MAX_DOM = -1
 
 #The max +- sq footage that the comparable property needs to be within the principal property
 SQ_FOOTAGE_PERCENTAGE = .15
-SQ_FOOTAGE_PERCENTAGE_TIER2 = .25
+SQ_FOOTAGE_PERCENTAGE_TIER2 = .20
 
 #The max distance that the comparable property needs to be within the principal property in miles
 MAX_DISTANCE_FROM_PRINCIPAL = .5
 MAX_DISTANCE_FROM_PRINCIPAL_TIER2 = .75
+#When this is rural like Livermore 1.0 mile is good. 
+#MAX_DISTANCE_FROM_PRINCIPAL_TIER2 = 1.0
 
 #Valid number of months for Comp Sold Date in months
 SOLD_PRICE_INTERVAL = 6
-SOLD_PRICE_INTERVAL_TIER2 = 7
+SOLD_PRICE_INTERVAL_TIER2 = 12
 
 #Store all of the tier1 vs tier2 data in a dict
 TIER_SQFT_KEY = "sqft_percent"

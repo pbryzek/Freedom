@@ -74,7 +74,7 @@ class EmailGenerator(object):
 
         #Parse out the relevant info
         listing_obj["AVG_Sq_Ft__c"]
-        name = listing_obj["Name"].strip()
+        listing_name = listing_obj["Name"].strip()
         st_num = listing_obj["Street_Number__c"].strip()
         st = listing_obj["Street_Name__c"].strip()
         state = listing_obj["State__c"].strip()
@@ -90,6 +90,21 @@ class EmailGenerator(object):
         lotsize = listing_obj["Lot_Size__c"]
         yearbuilt = listing_obj["Year_Built__c"]
 
+        #TODO get these fields from SalesForce
+        avg_dom = "26"
+        actual_repair = listing_obj["Actual_Rehab_Estimate__c"]
+        actual_list_price = listing_obj["Actual_Offer__c"]
+        avg_sold_price = listing_obj["Median_Value__c"]
+        med_sqf = listing_obj["Median_SQF__c"]
+        med_beds = listing_obj["Median_of_Beds__c"]
+        med_baths = listing_obj["Median_of_Baths__c"]
+        med_value = listing_obj["Median_Value__c"]
+        med_year = listing_obj["Median_Year_Built__c"]
+
+        prop_description = listing_obj["Description__c"]
+        if not prop_description:
+            prop_description = ""
+
         map_link_1 = listing_obj["Image_Google_1__c"]
         if not map_link_1:
             map_link_1 = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
@@ -98,17 +113,20 @@ class EmailGenerator(object):
         if not map_link_2:
             map_link_2 = "http://mike.teczno.com/img/google-maps-track.png"
 
-        #TODO get these fields from SalesForce
-        actual_repair = "$31,000"
-        actual_list_price = mao_med
-        avg_sold_price = "$201"
-        med_sqf = "2,122"
-        med_beds = "3"
-        med_baths = "2"
-        med_value = "$235,100"
-        avg_dom = "26"
-        med_year = "1950"
-        prop_description = "This is the new description from SalesForce"
+        image_main = listing_obj["Image_Main__c"]
+        if not image_main:
+            image_main = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
+
+        #TODO remove this
+        image_main = "https://na30.salesforce.com/sfc/p/#36000000axip/a/36000000GnMe/AsgrchTybZyJfMWylYrs_6dKDdYFiW0m7dWvDv5Z0Io"
+
+        image_1 = listing_obj["Image_1__c"]
+        if not image_1:
+            image_1 = "http://mike.teczno.com/img/google-maps-track.png"
+
+        image_2 = listing_obj["Image_2__c"]
+        if not image_2: 
+            image_2 = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
 
         listing_address = st_num + " " + st + ", " + city + ", " + state + " " + zip
         listing_address_filename = listing_address.replace(" ", "_")
@@ -163,7 +181,8 @@ class EmailGenerator(object):
             fh_w.write(html_template.encode("utf8"))
 
             #Later get the comps
-            #comp_objs = sf_bridge.get_comps_by_listing_name(listing_name)
+            print "!!!!" + str(listing_obj) 
+            comp_objs = sf_bridge.get_comps_by_listing_name(listing_name)
 
 def main():
     email_generator = EmailGenerator()

@@ -1,0 +1,138 @@
+Number of properties evaluating = 449
+Number of properties skipped due to address Undisclosed = 3
+Number of properties skipped due to shortsale = 6
+Number of properties skipped due to price too high = 0
+Number of properties skipped due to price too low = 0
+Number of properties skipped due to DOM too low = 249
+Total Number of properties evaluated = 190
+
+
+Getting info for property: 6060 GRIZZLY PEAK Blvd Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Overmoor  Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 10830 Monan St Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 7800 Bancroft Ave Oakland, CA 94621
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Tunnel Rd  Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94611-1021
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 60 Siena Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94618
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 2629 75 TH Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.644505815887 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03115242767 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.909920629193 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.15666292043 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.945026903989 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.964819117382 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03211572495 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.633829329778 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.644401541324 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.6790625546 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.739191388043 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.712724254714 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.655730550843 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06416290502 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04094992892 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02017176324 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01466856761 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.0536261556 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05061174892 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.970412121515 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06368701011 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02484104745 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.17696272626 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18425400791 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.07830545977 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03115242767 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.909920629193 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.15666292043 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.945026903989 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.964819117382 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03211572495 away from the principal and max allowed miles = 0.75 skipping
+Comp property sq footage is 1222 which is outside the allowed range of min: 682.5 max: 1137.5 skipping
+Comp property sq footage is 1325 which is outside the allowed range of min: 682.5 max: 1137.5 skipping
+Comp property is 1.06416290502 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04094992892 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02017176324 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.01466856761 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.0536261556 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05061174892 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.970412121515 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06368701011 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02484104745 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.17696272626 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18425400791 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.07830545977 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 25 total comps
+Evaluating 5 valid comps
+Got unexpected error from SalesForce, returning None! 
+SF Bridge, listing id was None, returning here
+
+Getting info for property: 2156 Mastlands Dr Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 1034 Amito Ave Oakland, CA 94705
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm

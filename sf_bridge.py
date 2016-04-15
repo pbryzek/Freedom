@@ -10,7 +10,7 @@ class SFBridge(object):
     _instance = None
 
     instance_domain = "na30.salesforce.com"
-    username = "tony@refreedomgroup.com"
+    username = "tony@lightningproperties.com"
     password = "Januszbarbara$5"
     token = "6PSeOTpzWUtwScqCLT4vR3I2"
 
