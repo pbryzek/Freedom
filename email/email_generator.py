@@ -65,6 +65,8 @@ DESCRIPTION_REPLACE_STR = "TEXT TO FIND AND REPLACE"
 MAP_1_REPLACE_STR = "https://images.benchmarkemail.com/client562548/image2993695.jpg"
 MAP_2_REPLACE_STR = "https://images.benchmarkemail.com/client562548/image2993697.jpg"
 
+COMP_REPLACE_STR = "COMP TEXT TO FIND AND REPLACE"
+
 class EmailGenerator(object):
 
     def create_buyer_marketing_email(self):
@@ -180,8 +182,22 @@ class EmailGenerator(object):
             fh_w.write(html_template.encode("utf8"))
 
             #Later get the comps
-            print "!!!!" + str(listing_obj) 
             comp_objs = sf_bridge.get_comps_by_listing_name(listing_name)
+            COMP_IMAGE = "https://images.benchmarkemail.com/client562548/image2994182.jpg"
+            COMP_ADDRESS = "538 S Daisy Ave, Santa Ana, 92703"
+            COMP_SQFT = "1,161" + " SQF"
+            COMP_SOLD = "Sold " + "1/28/2016"
+            COMP_PRICE = "$390,000"
+
+            #Create new html rows for every comp.
+            new_comp_rows = ""
+            for comp in comp_objs:
+                new_comp_row_html = '<tr><td class="trMargin"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td height="10"></td></tr></tbody></table></td></tr><tr><td class="bmeImageContainerRow" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="tdPart" valign="top"><table cellspacing="0" cellpadding="0" border="0" class="bmeImageContainer" width="560" align="left" style="float:left;"><tbody><tr><td valign="top" name="tdContainer"><table cellspacing="0" cellpadding="0" border="0" class="bmeImageTable" dimension="50%" imgid="2" style="float:right;" align="right" width="270" height="151"><tbody><tr><td name="bmeImgHolder" width="280" align="center" valign="top" height="151"><img src=' + COMP_IMAGE + ' class="mobile-img-large" width="270" style="max-width: 623px; display: block;" border="0"></td></tr></tbody></table><table cellspacing="0" cellpadding="0" border="0" class="bmeCaptionTable" style="float:left;" align="left" width="270"><tbody><tr><td name="tblCell" valign="top" align="left" style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: normal; color: #383838; text-align: left;"><div style="line-height: 150%;"><span style="font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"><br><br><br><span style="font-size: 16px;">' + COMP_ADDRESS + '</span></span><br><span style="font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-size: 18px;">' + COMP_PRICE + '  
+<br>' + COMP_SQFT + '<br>' + COMP_SOLD + '</span></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>'
+
+                new_comp_rows += new_comp_row_html
+
+            html_template = html_template.replace(COMP_REPLACE_STR , new_comp_rows)
 
 def main():
     email_generator = EmailGenerator()
