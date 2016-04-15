@@ -90,8 +90,7 @@ class EmailGenerator(object):
         lotsize = listing_obj["Lot_Size__c"]
         yearbuilt = listing_obj["Year_Built__c"]
 
-        #TODO get these fields from SalesForce
-        avg_dom = "26"
+        avg_dom = listing_obj["AVG DOM__c"]
         actual_repair = listing_obj["Actual_Rehab_Estimate__c"]
         actual_list_price = listing_obj["Actual_Offer__c"]
         avg_sold_price = listing_obj["Median_Value__c"]
