@@ -46,6 +46,10 @@ class SFBridge(object):
             handle_err_msg("Response had errors!" + str(errs))
             return None
 
+    def save_email_to_sf(self, email_html, listing_id):
+        params = {}
+        params["Buyers_Marketing_Email__c"] = email_html
+
     def normalize_data(self, data):
         if isinstance(data, basestring):
             normalized = data.strip().lower()
@@ -111,10 +115,14 @@ class SFBridge(object):
         return listing_ret
 
     def create_home_params(self, home): 
+        city = self.normalize_data(home.city).title()
+        address = self.normalize_data(home.address_st).title()
+        state = self.normalize_data(home.state).upper()
+
         params = {
             "Baths__c" : self.normalize_data(home.baths),
             "Beds__c" : self.normalize_data(home.beds),
-            "City__c" : self.normalize_data(home.city),
+            "City__c" : city,
             "Comps_Link__c" : self.normalize_data(home.compslink),
             "DOM__c" : self.normalize_data(home.dom),
             "Graph_Link__c" : self.normalize_data(home.graphlink), 
@@ -125,8 +133,8 @@ class SFBridge(object):
             "Map_Link__c" : self.normalize_data(home.maplink),
             "Redfin_Link__c" : self.normalize_data(home.redfin_link), 
             "Sq_Ft__c" : self.normalize_data(home.sqfootage),
-            "State__c" : self.normalize_data(home.state),
-            "Street_Name__c" : self.normalize_data(home.address_st),
+            "State__c" : state,
+            "Street_Name__c" : address,
             "Street_Number__c" : self.normalize_data(home.address_num), 
             "Year_Built__c" : self.normalize_data(home.yearbuilt), 
             "ZEstimate__c" : self.normalize_data(home.zestimate),

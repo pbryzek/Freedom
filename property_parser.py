@@ -99,6 +99,7 @@ class PropertyParser(object):
 
                 redfin_link = cols[self.redfin_link_index]
                 listing_id = cols[self.listing_id_index]
+                listing_id = listing_id.replace("-", "")
 
                 description = "Cheap Home that sells FAST! Handy man special!"
 

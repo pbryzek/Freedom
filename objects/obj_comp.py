@@ -3,6 +3,7 @@ import haversine
 import dateutil.parser
 
 class CompObj(object):
+
     def __init__(self, home, principal_lat, principal_long, comp_score, soldprice, solddate):
         self.home = home
         self.principal_lat = principal_lat
@@ -21,7 +22,8 @@ class CompObj(object):
  
         miles = haversine.distance(principal_point, comp_point)
 
-        return miles      
+        clean_miles = "%.2f" % miles
+        return clean_miles      
 
     def create_csv(self):
         distance = self.get_distance()

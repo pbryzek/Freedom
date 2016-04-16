@@ -90,21 +90,40 @@ class APIEngine(object):
             handle_err_msg("Evaluating " + str(len(comps)) + " valid comps")
             principal_arv = 0
             sqft_aggregate_value = 0
-            
+           
+            sqft_prices = [] 
             for comp in comps:
                 comp_comma_separated = comp.create_csv()
                 main_csv_string += comp_comma_separated
                 main_csv_string += self.newline
 
                 sqft_value = int(comp.sqftprice)
-                sqft_aggregate_value += sqft_value
+                sqft_prices.append(sqft_value)
 
             num_comps = len(comps)
             if num_comps == 0:
                 return
 
+            sqft_prices.sort()
+            num_tops = 3
+            top1 = sqft_prices.pop()
+            top2 = sqft_prices.pop()
+            top3 = sqft_prices.pop()
+            top4 = 0
+            top5 = 0
+
+            if num_comps > 10:
+                top4 = sqft_prices.pop()
+                num_tops += 1
+
+            if num_comps > 20:
+                top5 = sqft_prices.pop()
+                num_tops += 1
+
+            total_tops = top1 + top2 + top3 + top4 + top5
+
             #Get the average price/sqft for comps sold
-            avg_sqft_price = sqft_aggregate_value / num_comps
+            avg_sqft_price = total_tops / num_tops
 
             principal_arv = 0
             principal_sqfootage = 0
@@ -160,11 +179,11 @@ class APIEngine(object):
 
             mao_header = "principal_arv,avg $/sqft,rehab_light,rehab_med,rehab_high,mao_light,mao_med,mao_high"
             mao_comma_separated = str(principal_arv) + "," + str(avg_sqft_price) + "," + str(repair_light) + "," + str(repair_med) + "," + str(repair_high) + "," + str(mao_light) + "," + str(mao_med) + "," + str(mao_high)
+
             csvfile.write(mao_header)
             csvfile.write(self.newline)
             csvfile.write(mao_comma_separated)
             csvfile.write(self.newline)
-
             csvfile.write(self.newline)
 
             

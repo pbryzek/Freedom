@@ -1,0 +1,1338 @@
+Number of properties evaluating = 449
+Script only allowing the evaluation of 10 properties
+Number of properties skipped due to address Undisclosed = 1
+Number of properties skipped due to shortsale = 0
+Number of properties skipped due to price too high = 0
+Number of properties skipped due to price too low = 0
+Number of properties skipped due to DOM too low = 0
+Total Number of properties evaluated = 10
+
+
+Getting info for property: 2629 75 TH Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.16 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.20 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.16 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.20 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 6060 GRIZZLY PEAK Blvd Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Overmoor  Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 10830 Monan St Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 7800 Bancroft Ave Oakland, CA 94621
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Tunnel Rd  Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94611-1021
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 60 Siena Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94618
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 2629 75 TH Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+Number of properties evaluating = 449
+Script only allowing the evaluation of 10 properties
+Number of properties skipped due to address Undisclosed = 1
+Number of properties skipped due to shortsale = 0
+Number of properties skipped due to price too high = 0
+Number of properties skipped due to price too low = 0
+Number of properties skipped due to DOM too low = 0
+Total Number of properties evaluated = 10
+
+
+Getting info for property: 2629 75 TH Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 6060 GRIZZLY PEAK Blvd Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Overmoor  Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 10830 Monan St Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 7800 Bancroft Ave Oakland, CA 94621
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Tunnel Rd  Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94611-1021
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 60 Siena Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94618
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 2629 75 TH Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+Number of properties evaluating = 449
+Script only allowing the evaluation of 40 properties
+Number of properties skipped due to address Undisclosed = 2
+Number of properties skipped due to shortsale = 1
+Number of properties skipped due to price too high = 0
+Number of properties skipped due to price too low = 0
+Number of properties skipped due to DOM too low = 0
+Total Number of properties evaluated = 40
+
+
+Getting info for property: 2629 75 TH Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.15 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 6060 GRIZZLY PEAK Blvd Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Overmoor  Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 10830 Monan St Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 7800 Bancroft Ave Oakland, CA 94621
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Tunnel Rd  Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94611-1021
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 60 Siena Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 0 TUNNEL Rd  Oakland, CA 94618
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 2629 75 TH Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.91 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.16 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.91 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.16 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.02 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.08 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 2156 Mastlands Dr Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 1034 Amito Ave Oakland, CA 94705
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 6215 Maldon St Oakland, CA 94621
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 2636 38TH Ave Oakland, CA 94619
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.51 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.45 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.55 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.49 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.47 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.31 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.36 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.41 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.60 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.61 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.47 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.43 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.40 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.37 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.38 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.38 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.37 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.51 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.45 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.55 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.49 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.47 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.31 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.36 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.41 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.60 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.61 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.47 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.43 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.40 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.37 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.38 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.38 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.37 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 890 31st St Oakland, CA 94608
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Response from API ! 508  Error: no exact match found for input address
+Get Deep Search Results API did not return any results!
+
+Getting info for property: 5100 Thorndale Dr Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 5917 Bromley Ave Oakland, CA 94621
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 2021 Sonoma Way OAKLAND, CA 94601
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 6193 OAKDALE Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 640 Hiller Dr Oakland, CA 94618-2353
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 8451 ASTER Ave Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.93 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.80 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.84 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.84 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.84 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.45 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.19 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.55 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.61 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.70 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.73 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.67 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.76 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.75 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.56 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.36 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.27 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.93 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.80 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.84 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.84 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.84 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.45 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.19 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.55 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.61 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.70 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.73 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.67 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.76 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.75 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.56 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.36 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.27 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 2601 38th Ave Oakland, CA 94619-1003
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 2.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.72 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.93 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.10 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.38 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.24 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.24 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.21 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.48 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.94 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.14 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.20 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.39 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.46 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 4.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 4.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 4.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.11 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.72 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.65 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.57 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.57 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.57 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.72 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.93 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.10 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.38 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.24 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.24 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.21 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.48 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.94 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.14 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.20 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.39 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.46 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 4.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 4.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 4.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.11 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.72 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.65 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.57 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 541 E 17th St Oakland, CA 94606
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 1.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.69 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.73 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.99 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.44 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.92 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.92 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.88 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.90 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.86 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.76 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.70 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.12 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.07 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.47 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.51 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.53 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.50 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.00 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.94 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.94 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.69 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.73 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.99 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.44 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.92 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.92 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.88 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.90 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.86 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.76 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.70 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.12 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.07 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.08 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.47 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.51 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.53 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.50 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.00 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.94 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.94 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 0 Arrowhead Dr  Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Response from API ! 508  Error: no exact match found for input address
+Get Deep Search Results API did not return any results!
+
+Getting info for property: 6666 Moore Dr Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Response from API ! 508  Error: no exact match found for input address
+Get Deep Search Results API did not return any results!
+
+Getting info for property: 8930 MacArthur Blvd Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 3400 High St Oakland, CA 94619-1844
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 2.31 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.33 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.35 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.81 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.85 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.91 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.56 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 4.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 4.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.34 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.16 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.60 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.46 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.16 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.69 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.76 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.34 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.15 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.97 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.35 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.16 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.50 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.31 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.33 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.35 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.81 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.85 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.91 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.56 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 4.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 4.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.34 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.16 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.60 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.46 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.16 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.69 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.76 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.34 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.15 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.97 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.35 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.16 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.50 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 2757 RITCHIE St Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.88 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.91 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.82 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.86 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.90 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.89 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.92 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.67 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.67 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.00 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.98 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.87 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.88 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.91 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.82 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.86 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.90 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.89 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.92 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.96 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.71 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.67 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.67 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.00 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.98 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.04 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.87 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 5834 walnut Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 2.47 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.00 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.65 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.52 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.92 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.70 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.79 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.95 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.41 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.50 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.21 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.69 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.03 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.59 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.85 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.01 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.23 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.16 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.16 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.78 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 3.05 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.00 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.41 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 2.47 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.00 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.65 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.52 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.92 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.70 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.79 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.95 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.41 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.50 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.21 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.69 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.03 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.59 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.85 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.01 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.23 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.16 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.16 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.78 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 3.05 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.00 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 2.41 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 3881 Martin Luther King Jr Way Oakland, CA 94609
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: Shepherd Canyon Rd  Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Response from API ! 508  Error: no exact match found for input address
+Get Deep Search Results API did not return any results!
+
+Getting info for property: 6500 Girvin Dr Oakland, CA 94611
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 2428 HAVENSCOURT Blvd Oakland, CA 94605
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.82 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.87 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.91 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.90 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.76 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.78 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.75 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.89 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.87 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.90 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.98 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.94 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.09 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.22 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.27 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.19 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.21 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.19 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.82 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.87 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.91 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.90 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.76 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.78 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.74 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.75 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.89 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.87 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.90 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.98 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.94 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.09 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.22 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.27 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.19 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.21 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.19 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 4630 Penniman Ave Oakland, CA 94619
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Response from API ! 508  Error: no exact match found for input address
+Get Deep Search Results API did not return any results!
+
+Getting info for property: 760 29th St Oakland, CA 94609
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 1.35 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.37 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.59 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.56 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.29 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.29 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.32 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.34 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.44 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.11 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.41 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.24 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.27 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.73 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.12 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.83 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.85 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.22 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.43 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 1.35 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.37 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.59 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.56 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.18 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.29 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.29 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.32 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.34 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.44 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.81 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.11 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.06 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.41 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.24 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.27 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.73 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 1.12 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.83 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.85 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.54 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.22 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.43 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: Revere Ave  Oakland, CA 94603
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+get_search_results parse_results num_results > 1!!!
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: Revere Ave  Oakland, CA 94603
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+get_search_results parse_results num_results > 1!!!
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: Revere Ave  Oakland, CA 94603
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+get_search_results parse_results num_results > 1!!!
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Response from API ! 503 Property does not have a Zestimate Error: comps not available for the specified property identifier
+A total of 0 were found, skipping.
+
+Getting info for property: 1430 71ST Ave Oakland, CA 94621-3102
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.77 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.53 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.56 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.46 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.33 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.46 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.53 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.48 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.50 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.46 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.52 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.69 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.77 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.53 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.56 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.46 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.72 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.33 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.46 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.58 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.66 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.53 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.48 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.50 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.46 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.57 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.52 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.68 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.69 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
+
+Getting info for property: 4367 SHORT HILL Rd Oakland, CA 94605-4646
+Fetching http://www.zillow.com/webservice/GetDeepSearchResults.htm
+Status code = 200
+Fetching http://www.zillow.com/webservice/GetDeepComps.htm
+Status code = 200
+Comp property is 0.92 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.60 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.47 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.37 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.29 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.17 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.09 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.26 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.60 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.08 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.43 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.40 away from the principal and max allowed miles = 0.5 skipping
+Comp property is 0.92 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.59 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.60 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.64 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.63 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.65 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.47 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.62 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.37 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.29 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.17 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.09 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.26 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.60 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.08 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.43 away from the principal and max allowed miles = 0.75 skipping
+Comp property is 0.40 away from the principal and max allowed miles = 0.75 skipping
+Found a total of 0 total comps
+A total of 0 were found, skipping.
