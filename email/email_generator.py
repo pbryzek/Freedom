@@ -67,9 +67,14 @@ MAP_2_REPLACE_STR = "https://images.benchmarkemail.com/client562548/image2993697
 COMP_REPLACE_STR = "COMP TEXT TO FIND AND REPLACE"
 
 ARV_STR = "ARV: "
-ARV_REPLACE_STR= ARV_STR + "INSERT"
+ARV_REPLACE_STR = ARV_STR + "INSERT"
 
 class EmailGenerator(object):
+
+    def handle_dollars(self, num):
+        num_str = self.clean_num_str(num) 
+        dollars = self.convert_to_dollars(num_str)
+        return dollars
 
     def convert_to_dollars(self, num):
         dollars = "$" + num
@@ -177,8 +182,8 @@ class EmailGenerator(object):
         html_template = html_template.replace(REPAIR_REPLACE_STR, new_repair_str)
         new_year_str = YEAR_STR + str(yearbuilt)
         html_template = html_template.replace(YEAR_REPLACE_STR, new_year_str) 
-        new_arv_str = ARV_STR + "$" + str(arv)
-        html_template.replace(ARV_REPLACE_STR, new_arv_str)
+        new_arv_str = ARV_STR + self.handle_dollars(str(arv)) 
+        html_template = html_template.replace(ARV_REPLACE_STR, new_arv_str)
 
         #TODO maybe later add in the garage specific info?
         html_template = html_template.replace(GARAGE_TYPE_REPLACE_STR, "")
@@ -217,18 +222,18 @@ class EmailGenerator(object):
             city = comp["City__c"]
             state = comp["State__c"]
             street = comp["Street_Name__c"]
-            number = comp["Street_Number__c"]
-            zip = comp["Zip_Code__c"]
+            number = self.clean_num_str(comp["Street_Number__c"])
+            zip = self.clean_num_str(comp["Zip_Code__c"])
             COMP_ADDRESS = str(number) + " " + street + ", " + city + ", " + str(zip) 
            
             sqft = comp["Sq_Ft__c"]
-            COMP_SQFT = str(sqft) + " SQF"
+            COMP_SQFT = self.clean_num_str(str(sqft)) + " SQF"
             
             sold_date = comp["Sold_Date__c"]
             COMP_SOLD = "Sold " + sold_date
             
             price = comp["Sold_Price__c"]
-            COMP_PRICE = self.convert_to_dollars(str(price))
+            COMP_PRICE = self.handle_dollars(str(price))
 
             COMP_INFO = COMP_ADDRESS + "<br>" + COMP_PRICE + "<br>" + COMP_SQFT + "<br>" + COMP_SOLD
 
