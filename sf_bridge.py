@@ -23,11 +23,11 @@ class SFBridge(object):
     def __init__(self):
         self.sf = Salesforce(username=self.username, password=self.password, security_token=self.token)
 
-    def get_comps_by_listing_name(self, listing_name):
-        comp_objs = self.sf.Comp__c.get_by_custom_id("Listing__c", listing_name)
-        for comp_obj in comp_objs:
-            print comp_obj
-
+    def get_comps_by_listing_id(self, listing_id):
+        comp_query = "SELECT Sold_Date__c, Image_Main__c, Sq_Ft__c, Sold_Price__c, Zip_Code__c, City__c, State__c, Street_Name__c, Street_Number__c FROM Comp__c WHERE Listing__c = '" + str(listing_id) + "'"
+        comp_objs = self.sf.query(comp_query)
+        comps = comp_objs["records"]
+        return comps
 
     def get_listing_by_id(self, listing_id):
         listing_obj = self.sf.Listing__c.get(listing_id)
@@ -48,7 +48,9 @@ class SFBridge(object):
 
     def save_email_to_sf(self, email_html, listing_id):
         params = {}
-        params["Buyers_Marketing_Email__c"] = email_html
+        params["Buyers_Marketing_Email__c"] = email_html.encode("utf8")
+
+        self.sf.Listing__c.update(listing_id, params)
 
     def normalize_data(self, data):
         if isinstance(data, basestring):

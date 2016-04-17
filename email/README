@@ -1,1 +1,3 @@
 This part of the tool is used to generate the Marketing Email Materials
+
+python email_generator.py
