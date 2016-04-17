@@ -4,7 +4,6 @@ import codecs
 
 #first change the cwd to the script path
 scriptPath = os.path.realpath(os.path.dirname(sys.argv[0]))
-print scriptPath
 
 os.chdir(scriptPath)
 
@@ -16,8 +15,8 @@ from sf_bridge import SFBridge
 ENABLE_SENDING_EMAIL = False
 ENABLE_SAVE_EMAIL_HTML_SF = False
 
-TEMPLATE_READ_NAME = "./email_marketing_template.html"
-TEMPLATE_WRITE_NAME = "./email_marketing_"
+TEMPLATE_READ_NAME = "./inputs/email_marketing_template.html"
+TEMPLATE_WRITE_NAME = "./results/email_marketing_"
 
 HTML_EXTENSION = ".html"
 
@@ -61,13 +60,26 @@ AVG_DOM_REPLACE_STR = AVG_DOM_STR + "24"
 MED_YEAR_STR = "Median Year Built: "
 MED_YEAR_REPLACE_STR = MED_YEAR_STR + "1946"
 
-DESCRIPTION_REPLACE_STR = "TEXT TO FIND AND REPLACE"
+DESCRIPTION_REPLACE_STR = "DESCRIP TEXT TO FIND AND REPLACE"
 MAP_1_REPLACE_STR = "https://images.benchmarkemail.com/client562548/image2993695.jpg"
 MAP_2_REPLACE_STR = "https://images.benchmarkemail.com/client562548/image2993697.jpg"
 
 COMP_REPLACE_STR = "COMP TEXT TO FIND AND REPLACE"
 
+ARV_STR = "ARV: "
+ARV_REPLACE_STR= ARV_STR + "INSERT"
+
 class EmailGenerator(object):
+
+    def convert_to_dollars(self, num):
+        dollars = "$" + num
+        return dollars
+
+    def clean_num_str(self, num_str):
+        if not isinstance(num_str, basestring):
+            num_str = str(num_str) 
+        num_str = num_str.replace(".0", "")
+        return num_str
 
     def create_buyer_marketing_email(self):
         #Get the listing object
@@ -77,7 +89,7 @@ class EmailGenerator(object):
         #Parse out the relevant info
         listing_obj["AVG_Sq_Ft__c"]
         listing_name = listing_obj["Name"].strip()
-        st_num = listing_obj["Street_Number__c"].strip()
+        st_num = self.clean_num_str(listing_obj["Street_Number__c"].strip())
         st = listing_obj["Street_Name__c"].strip()
         state = listing_obj["State__c"].strip()
         latitude = listing_obj["Latitude__c"]
@@ -86,26 +98,37 @@ class EmailGenerator(object):
         zip = listing_obj["Zip_Code__c"].strip()
         mao_med = listing_obj["MAO_Medium__c"]
         mls_num = listing_obj["MLS__c"]
+        mls_num = mls_num.replace("-", "")
+
         num_beds = listing_obj["Beds__c"]
         num_baths = listing_obj["Baths__c"]
-        num_sqft = listing_obj["Sq_Ft__c"]
-        lotsize = listing_obj["Lot_Size__c"]
+        num_sqft = self.clean_num_str(listing_obj["Sq_Ft__c"])
+        lotsize = self.clean_num_str(listing_obj["Lot_Size__c"])
         yearbuilt = listing_obj["Year_Built__c"]
 
-        avg_dom = listing_obj["AVG DOM__c"]
-        actual_repair = listing_obj["Actual_Rehab_Estimate__c"]
-        actual_list_price = listing_obj["Actual_Offer__c"]
-        avg_sold_price = listing_obj["Median_Value__c"]
-        med_sqf = listing_obj["Median_SQF__c"]
+        avg_dom = self.clean_num_str(listing_obj["AVG_DOM__c"])
+
+        actual_repair_num = self.clean_num_str(listing_obj["Actual_Rehab_Estimate__c"])
+        actual_repair = self.convert_to_dollars(actual_repair_num)
+        actual_list_price_num = self.clean_num_str(listing_obj["Actual_Offer__c"])
+        actual_list_price = self.convert_to_dollars(actual_list_price_num)        
+
+        avg_sold_price_num = self.clean_num_str(listing_obj["Median_Value__c"])
+        avg_sold_price = self.convert_to_dollars(avg_sold_price_num)
+
+        med_sqf = self.clean_num_str(listing_obj["Median_SQF__c"])
         med_beds = listing_obj["Median_of_Beds__c"]
         med_baths = listing_obj["Median_of_Baths__c"]
-        med_value = listing_obj["Median_Value__c"]
+        med_value_num = self.clean_num_str(listing_obj["Median_Value__c"])
+        med_value = self.convert_to_dollars(med_value_num)
         med_year = listing_obj["Median_Year_Built__c"]
+        arv = listing_obj["Principal_ARV__c"]
 
         prop_description = listing_obj["Description__c"]
         if not prop_description:
             prop_description = ""
 
+        #TODO remove these defaults
         map_link_1 = listing_obj["Image_Google_1__c"]
         if not map_link_1:
             map_link_1 = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
@@ -131,6 +154,7 @@ class EmailGenerator(object):
 
         listing_address = st_num + " " + st + ", " + city + ", " + state + " " + zip
         listing_address_filename = listing_address.replace(" ", "_")
+        listing_address_filename = listing_address_filename.replace(",", "")
         listing_address = listing_address.title()
        
         fh = codecs.open(TEMPLATE_READ_NAME, 'r')
@@ -153,6 +177,8 @@ class EmailGenerator(object):
         html_template = html_template.replace(REPAIR_REPLACE_STR, new_repair_str)
         new_year_str = YEAR_STR + str(yearbuilt)
         html_template = html_template.replace(YEAR_REPLACE_STR, new_year_str) 
+        new_arv_str = ARV_STR + "$" + str(arv)
+        html_template.replace(ARV_REPLACE_STR, new_arv_str)
 
         #TODO maybe later add in the garage specific info?
         html_template = html_template.replace(GARAGE_TYPE_REPLACE_STR, "")
@@ -168,7 +194,7 @@ class EmailGenerator(object):
         html_template = html_template.replace(MED_BATHS_REPLACE_STR, new_med_baths)
         new_med_value = MED_VALUE_STR + str(med_value)
         html_template = html_template.replace(MED_VALUE_REPLACE_STR, new_med_value)
-        new_avg_dom = AVG_DOM_STR + avg_dom
+        new_avg_dom = AVG_DOM_STR + str(avg_dom)
         html_template = html_template.replace(AVG_DOM_REPLACE_STR, new_avg_dom)
         new_med_year = MED_YEAR_STR + str(med_year)
         html_template = html_template.replace(MED_YEAR_REPLACE_STR, new_med_year) 
@@ -177,27 +203,46 @@ class EmailGenerator(object):
         html_template = html_template.replace(MAP_1_REPLACE_STR, map_link_1)
         html_template = html_template.replace(MAP_2_REPLACE_STR, map_link_2)
 
+        comp_objs = sf_bridge.get_comps_by_listing_id(PROPERTY_ID)
+
+        #Create new html rows for every comp.
+        new_comp_rows = ""
+
+        for comp in comp_objs:
+            COMP_IMAGE = comp["Image_Main__c"] 
+            if not COMP_IMAGE:
+                #TODO remove this
+                COMP_IMAGE = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
+            
+            city = comp["City__c"]
+            state = comp["State__c"]
+            street = comp["Street_Name__c"]
+            number = comp["Street_Number__c"]
+            zip = comp["Zip_Code__c"]
+            COMP_ADDRESS = str(number) + " " + street + ", " + city + ", " + str(zip) 
+           
+            sqft = comp["Sq_Ft__c"]
+            COMP_SQFT = str(sqft) + " SQF"
+            
+            sold_date = comp["Sold_Date__c"]
+            COMP_SOLD = "Sold " + sold_date
+            
+            price = comp["Sold_Price__c"]
+            COMP_PRICE = self.convert_to_dollars(str(price))
+
+            COMP_INFO = COMP_ADDRESS + "<br>" + COMP_PRICE + "<br>" + COMP_SQFT + "<br>" + COMP_SOLD
+
+	    new_comp_row_html = '<tr><td align="left">' + COMP_INFO + '</td><td align="right"><img src="' + COMP_IMAGE + '" width="150" style="max-width: 150px; display: block; width: 150px;" alt="" border="0"></td></tr><tr><td style="overflow:hidden; height: 10px;"><span style="font-family: "Times New Roman", Times, Baskerville, Georgia, serif;"text-transform:capitalize;line-height:100%;"></span></td><td></td></tr>'
+
+            new_comp_rows += new_comp_row_html
+
+        html_template = html_template.replace(COMP_REPLACE_STR, new_comp_rows)
+        #Finally write it to file.
         output_template_name = TEMPLATE_WRITE_NAME + listing_address_filename + HTML_EXTENSION
         with open(output_template_name, 'w') as fh_w:
             fh_w.write(html_template.encode("utf8"))
 
-            #Later get the comps
-            comp_objs = sf_bridge.get_comps_by_listing_name(listing_name)
-            COMP_IMAGE = "https://images.benchmarkemail.com/client562548/image2994182.jpg"
-            COMP_ADDRESS = "538 S Daisy Ave, Santa Ana, 92703"
-            COMP_SQFT = "1,161" + " SQF"
-            COMP_SOLD = "Sold " + "1/28/2016"
-            COMP_PRICE = "$390,000"
-
-            #Create new html rows for every comp.
-            new_comp_rows = ""
-            for comp in comp_objs:
-                new_comp_row_html = '<tr><td class="trMargin"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td height="10"></td></tr></tbody></table></td></tr><tr><td class="bmeImageContainerRow" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="tdPart" valign="top"><table cellspacing="0" cellpadding="0" border="0" class="bmeImageContainer" width="560" align="left" style="float:left;"><tbody><tr><td valign="top" name="tdContainer"><table cellspacing="0" cellpadding="0" border="0" class="bmeImageTable" dimension="50%" imgid="2" style="float:right;" align="right" width="270" height="151"><tbody><tr><td name="bmeImgHolder" width="280" align="center" valign="top" height="151"><img src=' + COMP_IMAGE + ' class="mobile-img-large" width="270" style="max-width: 623px; display: block;" border="0"></td></tr></tbody></table><table cellspacing="0" cellpadding="0" border="0" class="bmeCaptionTable" style="float:left;" align="left" width="270"><tbody><tr><td name="tblCell" valign="top" align="left" style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: normal; color: #383838; text-align: left;"><div style="line-height: 150%;"><span style="font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"><br><br><br><span style="font-size: 16px;">' + COMP_ADDRESS + '</span></span><br><span style="font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-size: 18px;">' + COMP_PRICE + '  
-<br>' + COMP_SQFT + '<br>' + COMP_SOLD + '</span></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>'
-
-                new_comp_rows += new_comp_row_html
-
-            html_template = html_template.replace(COMP_REPLACE_STR , new_comp_rows)
+        sf_bridge.save_email_to_sf(html_template, PROPERTY_ID)
 
 def main():
     email_generator = EmailGenerator()
