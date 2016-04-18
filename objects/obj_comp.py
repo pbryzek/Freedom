@@ -23,7 +23,7 @@ class CompObj(object):
         miles = haversine.distance(principal_point, comp_point)
 
         clean_miles = "%.2f" % miles
-        return clean_miles      
+        return float(clean_miles)      
 
     def create_csv(self):
         distance = self.get_distance()
