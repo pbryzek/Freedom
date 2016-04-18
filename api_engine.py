@@ -90,7 +90,8 @@ class APIEngine(object):
             handle_err_msg("Evaluating " + str(len(comps)) + " valid comps")
             principal_arv = 0
             sqft_aggregate_value = 0
-           
+          
+            total_sqft_price = 0 
             sqft_prices = [] 
             for comp in comps:
                 comp_comma_separated = comp.create_csv()
@@ -100,10 +101,13 @@ class APIEngine(object):
                 sqft_value = int(comp.sqftprice)
                 sqft_prices.append(sqft_value)
 
+                total_sqft_price += sqft_value
+
             num_comps = len(comps)
             if num_comps == 0:
                 return
 
+            true_avg_sqft_price = total_sqft_price / num_comps
             sqft_prices.sort()
             num_tops = 3
             top1 = sqft_prices.pop()
@@ -124,6 +128,7 @@ class APIEngine(object):
 
             #Get the average price/sqft for comps sold
             avg_sqft_price = total_tops / num_tops
+            #avg_sqft_price = true_avg_sqft_price
 
             principal_arv = 0
             principal_sqfootage = 0
