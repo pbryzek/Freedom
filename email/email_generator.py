@@ -21,7 +21,7 @@ TEMPLATE_WRITE_NAME = "./results/email_marketing_"
 HTML_EXTENSION = ".html"
 
 #This is the SF ID which represent the property we will generate buyer's marketing materials
-PROPERTY_ID = "a0036000002achv"
+PROPERTY_ID = "a0036000002cZyY"
 
 #These are the strings for search and replace functionality
 ADDRESS_REPLACE_STR = "1516 W 2nd St, Santa Ana, CA 92703"
@@ -130,32 +130,13 @@ class EmailGenerator(object):
         arv = listing_obj["Principal_ARV__c"]
 
         prop_description = listing_obj["Description__c"]
-        if not prop_description:
-            prop_description = ""
 
-        #TODO remove these defaults
         map_link_1 = listing_obj["Image_Google_1__c"]
-        if not map_link_1:
-            map_link_1 = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
-
         map_link_2 = listing_obj["Image_Google_2__c"] 
-        if not map_link_2:
-            map_link_2 = "http://mike.teczno.com/img/google-maps-track.png"
-
         image_main = listing_obj["Image_Main__c"]
-        if not image_main:
-            image_main = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
-
-        #TODO remove this
-        image_main = "https://na30.salesforce.com/sfc/p/#36000000axip/a/36000000GnMe/AsgrchTybZyJfMWylYrs_6dKDdYFiW0m7dWvDv5Z0Io"
 
         image_1 = listing_obj["Image_1__c"]
-        if not image_1:
-            image_1 = "http://mike.teczno.com/img/google-maps-track.png"
-
         image_2 = listing_obj["Image_2__c"]
-        if not image_2: 
-            image_2 = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
 
         listing_address = st_num + " " + st + ", " + city + ", " + state + " " + zip
         listing_address_filename = listing_address.replace(" ", "_")
@@ -215,9 +196,6 @@ class EmailGenerator(object):
 
         for comp in comp_objs:
             COMP_IMAGE = comp["Image_Main__c"] 
-            if not COMP_IMAGE:
-                #TODO remove this
-                COMP_IMAGE = "http://d32ogoqmya1dw8.cloudfront.net/images/sp/library/google_earth/google_maps_hello_world.jpg"
             
             city = comp["City__c"]
             state = comp["State__c"]
@@ -247,8 +225,12 @@ class EmailGenerator(object):
         with open(output_template_name, 'w') as fh_w:
             fh_w.write(html_template.encode("utf8"))
 
+        print "num of characters here " + str(self.count_letters(html_template))
+
         sf_bridge.save_email_to_sf(html_template, PROPERTY_ID)
 
+    def count_letters(self, word):
+        return len(word) - word.count(' ')
 def main():
     email_generator = EmailGenerator()
     email_generator.create_buyer_marketing_email()
