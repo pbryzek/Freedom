@@ -1,6 +1,10 @@
 import os
 import sys
 import codecs
+import smtplib
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 #first change the cwd to the script path
 scriptPath = os.path.realpath(os.path.dirname(sys.argv[0]))
@@ -12,8 +16,8 @@ sys.path.append("..")
 
 from sf_bridge import SFBridge
 
-ENABLE_SENDING_EMAIL = False
-ENABLE_SAVE_EMAIL_HTML_SF = False
+ENABLE_SENDING_EMAIL = True
+ENABLE_SAVE_EMAIL_SF = False
 
 TEMPLATE_READ_NAME = "./inputs/email_marketing_template.html"
 TEMPLATE_WRITE_NAME = "./results/email_marketing_"
@@ -221,16 +225,48 @@ class EmailGenerator(object):
 
         html_template = html_template.replace(COMP_REPLACE_STR, new_comp_rows)
         #Finally write it to file.
+        encoded_html_template = html_template.encode("utf8")
         output_template_name = TEMPLATE_WRITE_NAME + listing_address_filename + HTML_EXTENSION
         with open(output_template_name, 'w') as fh_w:
-            fh_w.write(html_template.encode("utf8"))
+            fh_w.write(encoded_html_template)
 
-        print "num of characters here " + str(self.count_letters(html_template))
+        if ENABLE_SAVE_EMAIL_SF:
+            sf_bridge.save_email_to_sf(encoded_html_template, PROPERTY_ID)
 
-        sf_bridge.save_email_to_sf(html_template, PROPERTY_ID)
+        self.send_email(encoded_html_template)
+
+    def send_email(self, encoded_html_template):
+        if not ENABLE_SENDING_EMAIL:
+            return
+
+        from_email = "refreedomgroup@gmail.com"
+        email_password = "januszbarbara" 
+        to_email = "asdughman@gmail.com"
+
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = "Buyer's Marketing"
+        msg['From'] = from_email
+        msg['To'] = to_email
+
+        # Record the MIME types of both parts - text/plain and text/html.
+        part1 = MIMEText(encoded_html_template, 'html')
+
+        # Attach parts into message container.
+        # According to RFC 2046, the last part of a multipart message, in this case
+        # the HTML message, is best and preferred.
+        msg.attach(part1)
+
+        # Send the message via gmail SMTP server.
+        mail = smtplib.SMTP('smtp.gmail.com', 587)
+        mail.ehlo()
+        mail.starttls()
+        mail.login(from_email, email_password)
+        mail.sendmail(from_email, to_email, msg.as_string())
+        mail.quit()
 
     def count_letters(self, word):
         return len(word) - word.count(' ')
+
 def main():
     email_generator = EmailGenerator()
     email_generator.create_buyer_marketing_email()

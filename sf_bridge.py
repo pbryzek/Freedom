@@ -48,7 +48,7 @@ class SFBridge(object):
 
     def save_email_to_sf(self, email_html, listing_id):
         params = {}
-        params["Buyers_Marketing_Email__c"] = email_html.encode("utf8")
+        params["Buyers_Marketing_Email__c"] = email_html
 
         self.sf.Listing__c.update(listing_id, params)
 

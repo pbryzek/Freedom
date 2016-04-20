@@ -1,0 +1,9 @@
+image==1.5.3
+et-xmlfile==1.0.1
+geopy==1.11.0
+requests==1.2.3
+selenium==2.53.1
+simple-salesforce==0.68.1
+six==1.8.0
+xmltodict==0.10.1
+zillowpy==0.2
