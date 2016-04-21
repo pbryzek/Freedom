@@ -16,7 +16,7 @@ sys.path.append("..")
 
 from sf_bridge import SFBridge
 
-ENABLE_SENDING_EMAIL = True
+ENABLE_SENDING_EMAIL = False
 ENABLE_SAVE_EMAIL_SF = False
 
 TEMPLATE_READ_NAME = "./inputs/email_marketing_template.html"

@@ -7,7 +7,7 @@
 # Find the associated blog post at: http://blog.eskriett.com/2013/07/19/downloading-google-maps/
 
 import urllib
-import Image
+from PIL import Image
 import os
 import math
 
