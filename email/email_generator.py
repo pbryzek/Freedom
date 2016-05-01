@@ -15,6 +15,8 @@ os.chdir(scriptPath)
 sys.path.append("..")
 
 from sf_bridge import SFBridge
+from common.globals import format_address
+from common.globals import add_commas_to_num_str
 
 ENABLE_SENDING_EMAIL = False
 ENABLE_SAVE_EMAIL_SF = False
@@ -81,7 +83,9 @@ class EmailGenerator(object):
         return dollars
 
     def convert_to_dollars(self, num):
-        dollars = "$" + num
+        dollars_float = int(num)
+        dollars = ("${:,.2f}".format(dollars_float))
+        dollars = dollars[:-3]
         return dollars
 
     def clean_num_str(self, num_str):
@@ -112,6 +116,7 @@ class EmailGenerator(object):
         num_beds = listing_obj["Beds__c"]
         num_baths = listing_obj["Baths__c"]
         num_sqft = self.clean_num_str(listing_obj["Sq_Ft__c"])
+        num_sqft = add_commas_to_num_str(num_sqft)
         lotsize = self.clean_num_str(listing_obj["Lot_Size__c"])
         yearbuilt = listing_obj["Year_Built__c"]
 
@@ -126,6 +131,8 @@ class EmailGenerator(object):
         avg_sold_price = self.convert_to_dollars(avg_sold_price_num)
 
         med_sqf = self.clean_num_str(listing_obj["Median_SQF__c"])
+        med_sqf = add_commas_to_num_str(med_sqf)       
+ 
         med_beds = listing_obj["Median_of_Beds__c"]
         med_baths = listing_obj["Median_of_Baths__c"]
         med_value_num = self.clean_num_str(listing_obj["Median_Value__c"])
@@ -142,10 +149,9 @@ class EmailGenerator(object):
         image_1 = listing_obj["Image_1__c"]
         image_2 = listing_obj["Image_2__c"]
 
-        listing_address = st_num + " " + st + ", " + city + ", " + state + " " + zip
+        listing_address = format_address(st_num, st, city, state, zip)
         listing_address_filename = listing_address.replace(" ", "_")
         listing_address_filename = listing_address_filename.replace(",", "")
-        listing_address = listing_address.title()
        
         fh = codecs.open(TEMPLATE_READ_NAME, 'r')
         html_template = fh.read().decode("utf8") 
@@ -203,13 +209,14 @@ class EmailGenerator(object):
             
             city = comp["City__c"]
             state = comp["State__c"]
-            street = comp["Street_Name__c"]
-            number = self.clean_num_str(comp["Street_Number__c"])
+            st = comp["Street_Name__c"]
+            st_num = self.clean_num_str(comp["Street_Number__c"])
             zip = self.clean_num_str(comp["Zip_Code__c"])
-            COMP_ADDRESS = str(number) + " " + street + ", " + city + ", " + str(zip) 
+            COMP_ADDRESS = format_address(st_num, st, city, state, zip)
            
             sqft = comp["Sq_Ft__c"]
-            COMP_SQFT = self.clean_num_str(str(sqft)) + " SQF"
+            sqft_clean = add_commas_to_num_str(self.clean_num_str(str(sqft)))
+            COMP_SQFT = sqft_clean + " SQF"
             
             sold_date = comp["Sold_Date__c"]
             COMP_SOLD = "Sold " + sold_date
@@ -241,7 +248,7 @@ class EmailGenerator(object):
 
         from_email = "refreedomgroup@gmail.com"
         email_password = "januszbarbara" 
-        to_email = "asdughman@gmail.com"
+        to_email = "bryzek@gmail.com"
 
         msg = MIMEMultipart('alternative')
         msg['Subject'] = "Buyer's Marketing"

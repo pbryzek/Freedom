@@ -16,10 +16,13 @@ from google_map_downloader import GoogleMapDownloader
 PROPERTY_ID = "a0036000002cZyY"
 
 SAVE_PATH = "./results/"
+IMAGE_EXT = ".png"
+
+DEFAULT_ZOOM_FACTOR = 15
 
 class ImageUploader(object):
   
-    def __init__(self, latitude, longitude, address, zoom_factor=12):
+    def __init__(self, latitude, longitude, address, zoom_factor=DEFAULT_ZOOM_FACTOR):
         self.latitude = latitude
         self.longitude = longitude
         self.address = address
@@ -27,7 +30,7 @@ class ImageUploader(object):
     
         self.gmd = GoogleMapDownloader(latitude, longitude, zoom_factor) 
   
-    def create_google_map_image(self, zoom_factor=12):
+    def create_google_map_image(self, zoom_factor=DEFAULT_ZOOM_FACTOR):
         #If the zoom factor has changed, re-create the gmd
         if self.zoom_factor != zoom_factor:
             self.gmd = GoogleMapDownloader(self.latitude, self.longitude, self.zoom_factor) 
@@ -38,9 +41,9 @@ class ImageUploader(object):
             print("Could not generate the image - try adjusting the zoom level and checking your coordinates")
         else:
             #Save the image to disk
-            file_path = SAVE_PATH + self.address + ".png" 
+            file_path = SAVE_PATH + self.address + IMAGE_EXT 
             img.save(file_path)
-            print("The map has successfully been created")
+            print("Image created successfully.")
 
 def main():
     sf_bridge = SFBridge()
@@ -52,9 +55,8 @@ def main():
     city = listing_obj["City__c"]
     state = listing_obj["State__c"]
     address = st_num + "_" + st + "_" + city + "_" + state 
-    zoom_factor = 13
 
-    image_uploader = ImageUploader(latitude, longitude, address, zoom_factor)
+    image_uploader = ImageUploader(latitude, longitude, address)
     image_uploader.create_google_map_image()
     
 

@@ -9,6 +9,15 @@ def handle_err_msg(err_msg):
     globals = Globals()
     globals.handle_err_msg(err_msg)
 
+def add_commas_to_num_str(num_str):
+    num_str = float(num_str)
+    num_str = ("{:,.2f}".format(num_str))
+    num_str = num_str[:-3]
+    return num_str
+
+def format_address(st_num, st, city, state, zip):
+    address = st_num + " " + st.title() + ", " + city.title() + ", " + state.upper() + " " + zip
+    return address
 
 def format_citystatezip(city, state, zip):
     citystatezip = city + ", " + state + " " + zip

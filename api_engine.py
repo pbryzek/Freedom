@@ -16,6 +16,7 @@ import time
 
 from common.globals import handle_err_msg
 from common.globals import format_citystatezip
+from common.globals import format_address
 
 class APIEngine(object):
 
